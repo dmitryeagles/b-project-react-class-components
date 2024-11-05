@@ -1,0 +1,9 @@
+$width: 240px;
+$height: calc($width / 3 * 4);
+
+
+.imgContainer{
+  width: $width!important;
+  height: $height!important;
+  border-color: red;
+}
