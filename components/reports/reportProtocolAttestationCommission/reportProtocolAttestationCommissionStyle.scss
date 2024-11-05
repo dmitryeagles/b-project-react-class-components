@@ -1,0 +1,64 @@
+@import 'style/GLOBAL';
+
+.tableContainer {
+  overflow-x: auto;
+
+  table, th, td {
+    border: 1px solid $GLOBAL_borderColor;
+  }
+
+  th {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: lighten($GLOBAL_color_primary, 48%);
+  }
+}
+
+.editableCell {
+  cursor: pointer;
+  $animationTime: 0.5s;
+  transition: box-shadow $animationTime;
+
+  &:hover {
+    box-shadow: inset 0 0 3px $GLOBAL_color_primary;
+  }
+}
+
+.inputText {
+  input {
+    width: 100%;
+  }
+}
+
+.editorCellBtnContainer {
+  text-align: center;
+
+  button {
+    cursor: pointer;
+    font-size: $GLOBAL_fontSizeHelper;
+    padding: 5px 0 0 0;
+    background-color: unset;
+    border: none;
+    color: $GLOBAL_color_primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

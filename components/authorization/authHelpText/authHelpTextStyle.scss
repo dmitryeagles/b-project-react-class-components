@@ -1,0 +1,8 @@
+@import '../../../style/GLOBAL';
+
+.helpTextContainer {
+  color: $GLOBAL_fontColorHelpText;
+  padding: 5px 0;
+  font-size: $GLOBAL_fontSize;
+  text-align: center;
+}

@@ -1,0 +1,38 @@
+@import '../../../style/GLOBAL';
+
+@mixin mixin_authorizationButton($bgColor) {
+  background-color: $bgColor;
+  &:hover {
+    background-color: lighten($bgColor, 10%);
+  }
+}
+
+.componentContainer {
+  padding-top: 15px;
+}
+
+.authorizationButtonOk {
+  @include mixin_authorizationButton($GLOBAL_color_primary);
+}
+
+.authorizationButtonCancel {
+  margin-top: 10px;
+  @include mixin_authorizationButton($GLOBAL_color_cancelPrimary);
+}
+
+.authorizationButton {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  color: $GLOBAL_fontColorOnAnyBg;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime, color $animationTime;
+  border: none;
+  font-size: $GLOBAL_fontSize;
+  display: inline-block;
+  font-family: $GLOBAL_fontNamePrimary;
+}

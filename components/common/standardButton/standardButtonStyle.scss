@@ -1,0 +1,65 @@
+@import 'style/GLOBAL';
+
+@mixin mixin_standardButton($bgColor) {
+  background-color: $bgColor;
+
+  &:hover {
+    background-color: darken($bgColor, 10%);
+  }
+}
+
+.iconLeft {
+  margin-right: 3px;
+}
+
+.iconRight {
+  margin-right: 3px;
+}
+
+.buttonSize {
+  font-size: $GLOBAL_fontSize;
+  padding: 11px 20px;
+}
+
+.button {
+  font-family: $GLOBAL_fontNamePrimary;
+  border: none;
+  outline: unset;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  @include GLOBAL_mixin_unselectableText;
+  border-radius: 20px;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime, color $animationTime;
+}
+
+.buttonPrimary {
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  cursor: pointer;
+  @include mixin_standardButton($GLOBAL_color_primary);
+}
+
+.buttonSecondary {
+  color: $GLOBAL_fontColorOnSecondaryColorBg;
+  cursor: pointer;
+  @include mixin_standardButton($GLOBAL_color_secondary);
+}
+
+.buttonDisabled {
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  cursor: not-allowed;
+  @include mixin_standardButton($GLOBAL_color_disabledPrimary);
+}
+
+.buttonCancel {
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  cursor: pointer;
+  @include mixin_standardButton($GLOBAL_color_errorOrCancelPrimary);
+}
+
+.buttonOk {
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  cursor: pointer;
+  @include mixin_standardButton($GLOBAL_color_successOrOkPrimary);
+}

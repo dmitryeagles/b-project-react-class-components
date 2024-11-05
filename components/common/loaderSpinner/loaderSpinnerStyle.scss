@@ -1,0 +1,42 @@
+@import 'style/GLOBAL';
+
+@function function_loaderBorder($borderColor) {
+  @return (10px solid $borderColor);
+}
+
+.componentContainer {
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+}
+
+.loaderSpinner {
+  $mainSpinnerColor: $GLOBAL_borderColor;
+  $spinColor: $GLOBAL_color_primary;
+
+  border-bottom: function_loaderBorder($mainSpinnerColor);
+  border-left: function_loaderBorder($mainSpinnerColor);
+  border-right: function_loaderBorder($mainSpinnerColor);
+  border-top: function_loaderBorder($spinColor);
+  border-radius: 50%;
+  animation: animation_loaderSpinner 1.5s linear infinite;
+  display: inline-block;
+}
+
+.loaderSpinnerSize {
+  $size: 100px;
+  width: $size;
+  height: $size;
+}
+
+@keyframes animation_loaderSpinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.ladingText {
+  padding: 5px 10px 0 10px;
+  text-align: center;
+  font-weight: bold;
+  white-space: pre-wrap;
+}

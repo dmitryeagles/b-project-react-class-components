@@ -1,0 +1,36 @@
+@import 'style/GLOBAL';
+
+@mixin mixin_buttonAction($buttonColor) {
+  background-color: $buttonColor;
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.statusItem {
+
+  &__assigned{
+    margin: 3px;
+    padding: 5px 20px;
+    display: inline-block;
+    cursor: help;
+    border: 1px solid $GLOBAL_color_warningPrimary;
+    border-radius: 20px;
+  }
+  &__failed{
+    margin: 3px;
+    padding: 5px 20px;
+    display: inline-block;
+    cursor: help;
+    border: 1px solid $GLOBAL_color_errorOrCancelPrimary;
+    border-radius: 20px;
+  }
+  &__succeeded{
+    margin: 3px;
+    padding: 5px 20px;
+    display: inline-block;
+    cursor: help;
+    border: 1px solid $GLOBAL_color_successOrOkPrimary;
+    border-radius: 20px;
+  }
+}

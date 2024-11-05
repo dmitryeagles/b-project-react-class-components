@@ -1,0 +1,16 @@
+@import '../../../style/GLOBAL';
+
+.registrationNowContainer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.linkRegistration {
+  padding-left: 5px;
+  text-decoration: none;
+  color: $GLOBAL_color_primary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

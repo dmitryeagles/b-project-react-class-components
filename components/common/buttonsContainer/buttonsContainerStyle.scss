@@ -1,0 +1,27 @@
+.buttonsContainer {
+  $btnMargin: 5px;
+
+  & > button {
+    margin: $btnMargin;
+  }
+
+  & > a {
+    margin: $btnMargin;
+  }
+
+  & > span {
+    margin: $btnMargin;
+  }
+}
+
+.buttonsAlignCenter {
+  text-align: center;
+}
+
+.buttonsAlignRight {
+  text-align: right;
+}
+
+.buttonsAlignLeft {
+  text-align: left;
+}

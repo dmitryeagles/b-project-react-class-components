@@ -1,0 +1,1 @@
+export {default as ProjectImagesSlider} from "./projectImagesSlider";

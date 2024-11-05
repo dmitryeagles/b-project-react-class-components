@@ -1,0 +1,41 @@
+@import 'style/GLOBAL';
+
+.popupBodySize {
+  width: 80%;
+  min-width: 340px;
+}
+
+.inputTextWrapper {
+  input {
+    width: 100%;
+  }
+}
+
+.dynamicFormulaEditorsContainer {
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px 0 10px 0;
+  display: inline-block;
+  border: 1px solid $GLOBAL_borderColor;
+  transition: border-color 0.4s;
+
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.errorTextDropDownSelect {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+.selectedAllPositionsHelpText {
+  color: $GLOBAL_color_primary;
+  padding: 11px 0;
+}
+
+.checkBoxSelectedAllPositions {
+  margin-top: 10px;
+}

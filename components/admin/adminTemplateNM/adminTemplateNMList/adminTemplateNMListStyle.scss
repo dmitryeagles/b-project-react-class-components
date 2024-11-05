@@ -1,0 +1,37 @@
+@import 'style/GLOBAL';
+
+.templateActive {
+  $size: $GLOBAL_fontSizeSubtitle;
+  width: $size;
+  height: $size;
+  box-sizing: border-box;
+  background-color: $GLOBAL_color_successOrOkPrimary;
+  font-size: $GLOBAL_fontSize;
+  border-radius: 50%;
+  display: inline-block;
+  @include GLOBAL_mixin_svgBgAsBase64('check.svg', $GLOBAL_fontColorOnAnyBg);
+  background-size: 16px 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: help;
+}
+
+.btnMakeTemplateActive {
+  color: $GLOBAL_color_primary;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: unset;
+  transition: box-shadow 0.3s;
+  font-family: $GLOBAL_fontNameMedium;
+
+  &:hover {
+    box-shadow: 0 1px 0 $GLOBAL_color_primary;
+  }
+}
+
+.templatePublicName {
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  padding-bottom: 20px;
+}

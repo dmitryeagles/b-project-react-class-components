@@ -1,0 +1,131 @@
+@import 'style/GLOBAL';
+
+.popupBodySize {
+  width: 90%;
+  min-width: 340px;
+}
+
+.inputText {
+  input {
+    width: 100%;
+  }
+}
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+.templateTitle {
+  padding: 30px 0 20px 0;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  font-weight: bold;
+}
+
+.templateItemContent {
+  display: flex;
+  align-items: center;
+}
+
+.checkBoxSelectedTemplateItem {
+  $size: 30px;
+  width: $size;
+  height: $size;
+  border: 1px solid $GLOBAL_borderColor;
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  $animationTime: 0.2s;
+  transition: border-color $animationTime, box-shadow $animationTime;
+  flex-shrink: 0;
+
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+    box-shadow: 0 0 4px $GLOBAL_color_primary;
+  }
+}
+
+.checkBoxActive {
+  $icoSize: 20px;
+  background-repeat: no-repeat;
+  background-size: $icoSize $icoSize;
+  background-position: center;
+  @include GLOBAL_mixin_svgBgAsBase64('check.svg');
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('check.svg', $GLOBAL_color_primary);
+  }
+}
+
+.templateItemContainer {
+  box-sizing: border-box;
+  background-color: $GLOBAL_panelBgColor;
+  $boxShadowSetting: 0 2px 10px;
+  box-shadow: $boxShadowSetting $GLOBAL_boxShadowPanelColor;
+  $animationTime: 0.5s;
+  transition: box-shadow $animationTime, border-color $animationTime;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid $GLOBAL_panelBgColor;
+
+  &:hover {
+    box-shadow: $boxShadowSetting $GLOBAL_color_primary;
+  }
+}
+
+.templateItemContainerActive {
+  border-color: $GLOBAL_color_primary;
+}
+
+.templateContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 10px;
+}
+
+.buttonsContainer {
+  button {
+    width: 170px;
+
+    &:first-child {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  text-align: right;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1140px) {
+  .templateContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .templateContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .popupBodySize {
+    width: 95%;
+  }
+
+  .categoryContentContainer {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .buttonsContainer {
+    button {
+      &:first-child {
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import 'style/GLOBAL';
+
+.inputSearchContainer {
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+.filterSearchWrapper {
+  width: 50%;
+  display: inline-block;
+}
+
+
+.filterDropDownGroupContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 10px;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .containerGreed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filterSearchWrapper {
+    width: 80%;
+  }
+
+  .filterDropDownGroupContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .filterSearchWrapper {
+    width: 100%;
+    display: block;
+  }
+
+  .containerGreed {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .filterDropDownGroupContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px 10px;
+  }
+}

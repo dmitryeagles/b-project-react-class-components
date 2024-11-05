@@ -1,0 +1,9 @@
+@import 'style/GLOBAL';
+
+.icoFactory {
+  @include GLOBAL_mixin_svgBgAsBase64('factory.svg', $GLOBAL_fontColorPrimary);
+}
+
+.icoUsers {
+  @include GLOBAL_mixin_svgBgAsBase64('users.svg', $GLOBAL_fontColorPrimary);
+}

@@ -1,0 +1,9 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  border-bottom: 1px solid $GLOBAL_borderColor;
+  padding: 0 0 5px 0;
+  margin: 10px 0 20px 0;
+}

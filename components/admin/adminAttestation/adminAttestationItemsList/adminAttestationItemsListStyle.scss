@@ -1,0 +1,89 @@
+@import 'style/GLOBAL';
+
+.attestationName {
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  padding-bottom: 20px;
+  @include GLOBAL_mixin_wordWrap;
+}
+
+.buttonsActionsContainer {
+  padding: 10px 20px 20px 20px;
+  text-align: right;
+}
+
+@mixin mixin_buttonAction($buttonColor) {
+  background-color: $buttonColor;
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.buttonAction {
+  font-size: $GLOBAL_fontSizeHelper;
+  cursor: pointer;
+  width: 120px;
+  height: 26px;
+  border-radius: 10px;
+  font-family: $GLOBAL_fontNamePrimary;
+  outline: none;
+  color: $GLOBAL_fontColorOnAnyBg;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  margin: 5px 0 0 10px;
+  text-decoration: none;
+}
+
+.buttonActionDelete {
+  $btnDeleteColor: $GLOBAL_color_cancelPrimary;
+  @include mixin_buttonAction($btnDeleteColor);
+}
+
+.buttonActionEdit {
+  $btnEditColor: $GLOBAL_color_primary;
+  @include mixin_buttonAction($btnEditColor);
+}
+
+.attestationItemContainer {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.attestationItemContentContainer {
+  padding: 20px;
+}
+
+.copyAttestationContainer {
+  text-align: right;
+
+  .linkCopyAttestation {
+    color: $GLOBAL_color_primary;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.buttonFinishAttestation {
+  padding: 10px 10px;
+  background-color: $GLOBAL_color_primary;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  cursor: pointer;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%);
+  }
+}

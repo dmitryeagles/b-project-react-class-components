@@ -1,0 +1,19 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.smoothAppearance {
+  animation: animationShowButton .3s;
+}
+
+@keyframes animationShowButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

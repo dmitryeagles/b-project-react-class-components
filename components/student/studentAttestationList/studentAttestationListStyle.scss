@@ -1,0 +1,43 @@
+@import 'style/GLOBAL';
+
+.attestationItemContainer {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.attestationItemContentContainer {
+  padding: 20px;
+}
+
+.attestationBtnItem{
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+}
+
+.linkShowAttestationTests {
+  background-color: $GLOBAL_color_primary;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%);
+  }
+}
+
+.attestationBtnNotAvailable {
+  background-color: $GLOBAL_color_errorOrCancelPrimary;
+}
+
+.attestationName {
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  padding-bottom: 20px;
+}

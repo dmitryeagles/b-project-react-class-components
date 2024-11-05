@@ -1,0 +1,3 @@
+import AdminAttestationActionButtons from "./adminAttestationActionButtons/adminAttestationActionButtons";
+
+export {AdminAttestationActionButtons}

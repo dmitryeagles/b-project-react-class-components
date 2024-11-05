@@ -1,0 +1,135 @@
+@import 'style/GLOBAL';
+
+.optionsQuestionContainer {
+  padding: 20px;
+  background-color: $GLOBAL_panelBgColor;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+  box-shadow: 0 1px 9px $GLOBAL_boxShadowContainer;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px 30px;
+
+  &:hover {
+    box-shadow: 0 1px 9px #00c6ff;
+  }
+}
+
+.titleOptionsContainer {
+  margin-bottom: 20px;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+.titleAnswersContainer {
+  font-size: $GLOBAL_fontSizeSubtitle;
+  margin-bottom: 0;
+}
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+.answerCorrectEditor {
+  padding-top: 10px;
+}
+
+.answersListElements {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px 40px;
+  margin-top: 20px;
+}
+
+.answersListContainer {
+  margin-top: 20px;
+}
+
+.answerItemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+@mixin mixin_standardButton($bgColor) {
+  background-color: $bgColor;
+
+  &:hover {
+    background-color: darken($bgColor, 10%);
+  }
+}
+
+.editAnswerAction {
+  border-radius: 10px;
+  text-align: center;
+  color: $GLOBAL_fontColorOnAnyBg;
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: $GLOBAL_fontNamePrimary;
+  outline: none;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  padding: 8px 28px;
+  box-sizing: border-box;
+  @include mixin_standardButton($GLOBAL_color_primary);
+  width: 180px;
+  position: relative;
+}
+
+.deleteAnswerAction {
+  border-radius: 10px;
+  text-align: center;
+  color: $GLOBAL_fontColorOnAnyBg;
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: $GLOBAL_fontNamePrimary;
+  outline: none;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  padding: 8px 28px;
+  box-sizing: border-box;
+  @include mixin_standardButton($GLOBAL_color_cancelPrimary);
+  width: 180px;
+  position: relative;
+}
+
+.buttonsAnswerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.icon {
+  position: absolute;
+  left: 15px;
+}
+
+.editQuestionActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.answersTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1140px) {
+  .answersListElements {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

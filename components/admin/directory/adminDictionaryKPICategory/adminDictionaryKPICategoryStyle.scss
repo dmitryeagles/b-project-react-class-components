@@ -1,0 +1,9 @@
+@import 'style/GLOBAL';
+
+.icoFactory {
+  @include GLOBAL_mixin_svgBgAsBase64('factory.svg', $GLOBAL_fontColorPrimary);
+}
+
+.icoChart {
+  @include GLOBAL_mixin_svgBgAsBase64('chart.svg', $GLOBAL_fontColorPrimary);
+}

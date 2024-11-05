@@ -1,0 +1,29 @@
+@import 'style/GLOBAL';
+
+.answerTextLabel {
+  font-family: $GLOBAL_fontNameMedium;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
+  span:last-child {
+    font-style: normal;
+    font-weight: 500;
+    font-family: $GLOBAL_fontNameMedium;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+    color: #B5B5B5;
+  }
+}
+
+.answerTextLabelNew {
+  span {
+    color: $GLOBAL_color_successOrOkPrimary !important;
+  }
+}
+
+.answerCorrectEditor {
+  padding-top: 10px;
+}

@@ -1,0 +1,136 @@
+@import 'style/GLOBAL';
+
+.groupContainer {
+  padding-bottom: 20px;
+}
+
+.groupContainerItems {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px 20px;
+}
+
+.groupTitle {
+  color: $GLOBAL_color_primary;
+  border-bottom: 1px solid $GLOBAL_borderColor;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.mainCategoryItem {
+  text-align: center;
+  border-radius: 10px;
+  background-color: $GLOBAL_panelBgColor;
+  display: inline-block;
+  padding: 10px 10px 30px 10px;
+  text-decoration: none;
+  cursor: pointer;
+  $animationTime: 0.2s;
+  transition: color $animationTime ease-in-out, box-shadow $animationTime ease-in-out;
+  box-shadow: 0 1px 7px rgb(0 125 237 / 26%);
+
+  &:hover {
+    box-shadow: 0 1px 7px $GLOBAL_color_primary;
+
+    .imageContainer {
+      filter: grayscale(0);
+    }
+
+    .textContainer {
+      color: $GLOBAL_color_primary;
+    }
+  }
+}
+
+.textContainer {
+  padding-top: 5px;
+  color: $GLOBAL_fontColorPrimary;
+  text-decoration: none;
+  font-family: $GLOBAL_fontNameMedium;
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+.imageContainer {
+  height: 170px;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  filter: grayscale(1);
+  transition: filter 0.5s;
+}
+
+.imageBookshelves {
+  @include GLOBAL_mixin_svgBgAsBase64('bookshelvesColor.svg');
+}
+
+.imagePeoples {
+  @include GLOBAL_mixin_svgBgAsBase64('peoples.svg');
+}
+
+.imageTeamwork {
+  @include GLOBAL_mixin_svgBgAsBase64('teamwork.svg');
+}
+
+.imageQuestions {
+  @include GLOBAL_mixin_svgBgAsBase64('questionsColor.svg');
+}
+
+.imageEducator {
+  @include GLOBAL_mixin_svgBgAsBase64('educatorColor.svg');
+}
+
+.imageUndrawScrumBoard {
+  @include GLOBAL_mixin_svgBgAsBase64('undrawScrumBoardColor.svg');
+}
+
+.imageCertificate {
+  @include GLOBAL_mixin_svgBgAsBase64('certificateColor.svg');
+}
+
+.imageUnknown {
+  @include GLOBAL_mixin_svgBgAsBase64('faqColor.svg');
+}
+
+.imageBuildingBlocks {
+  @include GLOBAL_mixin_svgBgAsBase64('buildingBlocks.svg');
+}
+
+.imageBeginChatColor {
+  @include GLOBAL_mixin_svgBgAsBase64('beginChatColor.svg');
+}
+.imageProject {
+  @include GLOBAL_mixin_svgBgAsBase64('workingRemotely.svg');
+}
+.imageProjectRegistry {
+  @include GLOBAL_mixin_svgBgAsBase64('realTimeSync.svg');
+}
+.imageResourceAlignment {
+  @include GLOBAL_mixin_svgBgAsBase64('levelsColor.svg');
+}
+
+.imageNotebook {
+  @include GLOBAL_mixin_svgBgAsBase64('notebookColor.svg');
+}
+
+.imageAttestationNewEmployees{
+  @include GLOBAL_mixin_svgBgAsBase64('ideasColor.svg');
+}
+@media screen and (max-width: 1140px) {
+  .groupContainerItems {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .groupContainerItems {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .groupContainerItems {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

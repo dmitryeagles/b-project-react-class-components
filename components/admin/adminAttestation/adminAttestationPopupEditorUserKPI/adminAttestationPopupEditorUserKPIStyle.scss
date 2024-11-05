@@ -1,0 +1,49 @@
+@import 'style/GLOBAL';
+
+.popupBodySize {
+  width: 85%;
+  min-width: 340px;
+}
+
+.inputText {
+  input {
+    width: 100%;
+  }
+}
+
+.errorTextDropdown {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+.testLevelTestName {
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  padding-bottom: 20px;
+}
+
+.testLevelContainer {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px 20px;
+}
+
+@media screen and (max-width: 1140px) {
+  .testLevelContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .popupBodySize {
+    width: 95%;
+  }
+
+  .testLevelContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

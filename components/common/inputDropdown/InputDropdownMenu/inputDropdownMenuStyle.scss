@@ -1,0 +1,13 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 250px;
+  overflow-y: auto;
+
+  background-color: $GLOBAL_panelBgColor;
+
+}

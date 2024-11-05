@@ -1,0 +1,13 @@
+@import 'style/GLOBAL';
+
+$siteTopMenuHeight: 60px;
+
+.topMenuContainer {
+  height: $siteTopMenuHeight;
+  background-color: transparentize($GLOBAL_color_topMnu, 0.2);
+  padding: 0 10px 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

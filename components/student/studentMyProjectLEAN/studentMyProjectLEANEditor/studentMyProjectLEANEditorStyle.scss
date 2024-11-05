@@ -1,0 +1,131 @@
+@use "sass:math";
+@import 'style/GLOBAL';
+
+@mixin mixin_buttonAction($buttonColor) {
+  background-color: $buttonColor;
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.popupBodySize {
+  width: 90%;
+  min-width: 340px;
+}
+
+.inputText {
+  input {
+    width: 100%;
+  }
+}
+
+.imgesContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 10px;
+}
+
+.itemImgContainer {
+  z-index: 0;
+  $imgWidth: 250px;
+  width: $imgWidth;
+  height: math.floor(math.div($imgWidth * 9, 16));
+  flex-shrink: 0;
+  position: relative;
+  $animationTime: 0.5s;
+  transition: width $animationTime, height $animationTime;
+
+  &:hover {
+    .areaActionButtonsPreviewImageFile {
+      z-index: 0;
+      opacity: 1;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.areaActionButtonsPreviewImageFile {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+.categorySeparator {
+  border-bottom: 1px solid $GLOBAL_borderColor;
+  font-weight: bold;
+  color: $GLOBAL_color_primary;
+}
+
+.categoryContentContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px 10px;
+  padding: 20px 0 30px 0;
+}
+
+.buttonsActionsContainer {
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.buttonAction {
+  font-family: $GLOBAL_fontNamePrimary;
+  outline: none;
+  color: $GLOBAL_fontColorOnAnyBg;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.buttonActionEdit {
+  $btnEditColor: $GLOBAL_color_primary;
+  @include mixin_buttonAction($btnEditColor);
+}
+
+@media screen and (max-width: 960px) {
+  .categoryContentContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .imgesContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px 10px;
+  }  
+}
+
+@media screen and (max-width: 720px) {
+  .popupBodySize {
+    width: 95%;
+  }
+
+  .categoryContentContainer {
+    display: block;
+  }
+
+  .imgesContainer{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px 10px;
+  }
+}

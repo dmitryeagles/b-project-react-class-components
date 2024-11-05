@@ -1,0 +1,77 @@
+@import 'style/GLOBAL';
+
+.buttonLoginSystem {
+  background-color: $GLOBAL_color_primary;
+  margin-right: 20px;
+  color: $GLOBAL_fontColorOnAnyBg;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  font-size: $GLOBAL_fontSize;
+  $icoSize: 20px;
+  padding: 10px 30px 10px (30px + $icoSize);
+  background-position: left $icoSize center;
+  background-size: $icoSize $icoSize;
+  background-repeat: no-repeat;
+  @include GLOBAL_mixin_svgBgAsBase64('login.svg', $GLOBAL_fontColorOnAnyBg);
+  flex-shrink: 0;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%);
+  }
+}
+
+.buttonRecoverPassword {
+  color: $GLOBAL_fontColorOnAnyBg;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: $GLOBAL_fontSize;
+  $icoSize: 20px;
+  padding-left: $icoSize + 10px;
+  background-position: left;
+  background-size: $icoSize $icoSize;
+  background-repeat: no-repeat;
+  @include GLOBAL_mixin_svgBgAsBase64('lock.svg', $GLOBAL_fontColorOnAnyBg);
+  flex-shrink: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.mobileAuthBtnLogin {
+  @include GLOBAL_mixin_svgBgAsBase64('login.svg', $GLOBAL_fontColorOnAnyBg);
+}
+
+.mobileBtn {
+  width: 45px;
+  height: 45px;
+  background-color: $GLOBAL_color_primary;
+  background-position: center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  display: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%);
+  }
+}
+
+.mobileAuthBtnRecoverPassword {
+  @include GLOBAL_mixin_svgBgAsBase64('lock.svg', $GLOBAL_fontColorOnAnyBg);
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 540px) {
+  .fullSizeBtn {
+    display: none;
+  }
+
+  .mobileBtn {
+    display: inline-block;
+  }
+}

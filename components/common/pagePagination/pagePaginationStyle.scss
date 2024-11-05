@@ -1,0 +1,99 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  padding: 0 5px;
+  margin-top: 20px;
+}
+
+.paginationLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrowNexPrevious {
+  font-size: $GLOBAL_fontSize;
+  display: inline-block;
+  background-color: $GLOBAL_panelBgColor;
+  border-radius: 5px;
+  cursor: pointer;
+
+  $backgroundSize: 40px;
+  width: $backgroundSize;
+  height: $backgroundSize;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $GLOBAL_fontSize $GLOBAL_fontSize;
+
+  $animationTime: 0.3s;
+  transition: box-shadow $animationTime, border-color $animationTime;
+
+  &:hover {
+    box-shadow: 0 0 3px $GLOBAL_color_primary;
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.arrowNext {
+  margin-left: 5px;
+  @include GLOBAL_mixin_svgBgAsBase64('arrowRight.svg', $GLOBAL_fontColorPrimary);
+  border: 1px solid $GLOBAL_borderColor;
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('arrowRight.svg', $GLOBAL_color_primary);
+  }
+}
+
+.arrowPrevious {
+  margin-right: 5px;
+  @include GLOBAL_mixin_svgBgAsBase64('arrowLeft.svg', $GLOBAL_fontColorPrimary);
+  border: 1px solid $GLOBAL_borderColor;
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('arrowLeft.svg', $GLOBAL_color_primary);
+  }
+}
+
+
+.rightContainer {
+  display: flex;
+  align-items: center;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid $GLOBAL_borderColor;
+  background-color: $GLOBAL_panelBgColor;
+  $animationTime: 0.3s;
+  transition: box-shadow $animationTime, border-color $animationTime;
+
+
+  @include GLOBAL_mixin_defaultFonts();
+
+  &:active,
+  &:focus-visible,
+  &:focus,
+  &:hover{
+    box-shadow: 0 0 3px $GLOBAL_color_primary;
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.lineHelpInfo {
+  padding-top: 10px;
+
+  .totalItemsContainer {
+    display: inline-block;
+    font-size: $GLOBAL_fontSize;
+  }
+
+  .itemsCount {
+    color: $GLOBAL_color_primary;
+    font-weight: bold;
+  }
+}

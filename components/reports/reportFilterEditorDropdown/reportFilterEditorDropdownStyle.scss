@@ -1,0 +1,32 @@
+@import 'style/GLOBAL';
+
+.filterLabel {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.helpLabel {
+  padding-top: 5px;
+  color: $GLOBAL_fontColorHelpText;
+  font-size: $GLOBAL_fontSizeHelper;
+}
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+.smoothEditor {
+  animation: animationShowEditor .3s;
+}
+
+@keyframes animationShowEditor {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

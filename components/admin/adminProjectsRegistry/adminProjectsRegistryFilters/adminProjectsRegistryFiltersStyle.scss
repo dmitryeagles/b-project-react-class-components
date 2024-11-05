@@ -1,0 +1,47 @@
+.filtersContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 10px;
+}
+
+.inputSearchContainer {
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+
+.filterSearchWrapper {
+  width: 50%;
+  display: inline-block;
+}
+
+.filterDropDownGroupContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 10px;
+}
+
+@media screen and (max-width: 960px) {
+  .filtersContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filterSearchWrapper {
+    width: 80%;
+  }
+  .filterDropDownGroupContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .filterSearchWrapper {
+    width: 100%;
+    display: block;
+  }
+  .filtersContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .filterDropDownGroupContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

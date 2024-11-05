@@ -1,0 +1,82 @@
+@use "sass:math";
+@import 'style/GLOBAL';
+
+@mixin mixin_buttonAction($buttonColor) {
+  background-color: $buttonColor;
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.simpleListItem {
+  margin: 3px;
+  padding: 5px 20px;
+  border: 1px solid $GLOBAL_color_primary;
+  display: inline-block;
+  border-radius: 20px;
+  cursor: help;
+}
+
+.labelResourse {
+  display: inline-block;
+  font-weight: bold;
+}
+.buttonsActionsContainer {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px 10px;
+}
+
+.buttonsActionsContainerNew {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px 10px;
+}
+
+.buttonAction {
+  font-family: $GLOBAL_fontNamePrimary;
+  outline: none;
+  color: $GLOBAL_fontColorOnAnyBg;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.areaActionButtonsPreviewImageFile {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.imgContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-gap: 10px 10px;
+  align-items: start;
+}
+
+.buttonActionEdit {
+  $btnEditColor: $GLOBAL_color_primary;
+  @include mixin_buttonAction($btnEditColor);
+}
+
+@media screen and (max-width: 720px) {
+  .imgContainer{
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+  }
+}
+@media screen and (max-width: 500px) {
+  .imgContainer{
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: row;
+  }
+}

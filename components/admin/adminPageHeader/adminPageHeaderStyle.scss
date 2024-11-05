@@ -1,0 +1,16 @@
+@import 'style/GLOBAL';
+
+.adminPageTitle {
+  font-size: $GLOBAL_fontSizeTitle;
+  text-align: left;
+  color: $GLOBAL_fontColorPrimary;
+  padding: 0 5px 0 5px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+@include GLOBAL_mixin_media_leftMenuGoesUp {
+  .adminPageTitle {
+    text-align: center;
+  }
+}

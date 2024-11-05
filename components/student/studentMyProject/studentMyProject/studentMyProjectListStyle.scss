@@ -1,0 +1,79 @@
+@import 'style/GLOBAL';
+
+@mixin mixin_buttonAction($buttonColor) {
+  background-color: $buttonColor;
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.itemContainer {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.itemGrid {
+  display: grid;
+}
+
+.itemContentContainer {
+  padding: 20px 20px 0px 20px;
+  height: 100%;
+}
+
+.buttonsActionsContainer {
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.buttonAction {
+  font-size: $GLOBAL_fontSizeHelper;
+  cursor: pointer;
+  width: 120px;
+  height: 26px;
+  border-radius: 10px;
+  font-family: $GLOBAL_fontNamePrimary;
+  outline: none;
+  color: $GLOBAL_fontColorOnAnyBg;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  margin: 5px 0 0 10px;
+}
+
+.buttonActionDelete {
+  $btnDeleteColor: $GLOBAL_color_cancelPrimary;
+  @include mixin_buttonAction($btnDeleteColor);
+}
+
+.imgContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-gap: 10px 10px;
+  align-items: start;
+}
+
+.buttonActionEdit {
+  $btnEditColor: $GLOBAL_color_primary;
+  @include mixin_buttonAction($btnEditColor);
+}
+
+@media screen and (max-width: 720px) {
+  .imgContainer{
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+  }
+}
+@media screen and (max-width: 500px) {
+  .imgContainer{
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: row;
+  }
+}

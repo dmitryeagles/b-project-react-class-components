@@ -1,0 +1,23 @@
+@import 'style/GLOBAL';
+
+.imgContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-gap: 10px 10px;
+  align-items: start;
+}
+
+@media screen and (max-width: 720px) {
+  .imgContainer{
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .imgContainer{
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: row;
+  }
+}

@@ -1,0 +1,54 @@
+@import 'style/GLOBAL';
+
+.simpleListItem{
+  width: fit-content;
+  display: flex;
+  cursor: help;
+  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: lighten($GLOBAL_color_primary, 10%);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 15px 15px 0px 15px;
+  transition: background-color 0.4s;
+  &:hover{
+    background-color: lighten($GLOBAL_color_primary, 20%);
+  }
+}
+.commentText{
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.commentDate{
+  float: left;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.buttonShowComments {
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: unset;
+  transition: box-shadow 0.3s;
+  font-family: $GLOBAL_fontNameMedium;
+  padding: 5px 10px;
+  background-color: lighten($GLOBAL_color_cancelPrimary, 10%);;
+  display: flex;
+  border-radius: 10px;
+  color: $GLOBAL_fontColorOnAnyBg;
+  transition: background-color 0.3s;
+  justify-content: center;
+  &:hover{
+    background-color: lighten($GLOBAL_color_cancelPrimary, 20%);
+  }
+}
+
+.buttonShowComments {
+  background-position: right;
+  padding-right: $GLOBAL_fontSize;
+  background-repeat: no-repeat;
+  $icoSize: 12px;
+  background-size: $icoSize $icoSize;
+}

@@ -1,0 +1,46 @@
+@import 'style/GLOBAL';
+
+.tableContainer {
+  table, th, td {
+    border: 1px solid $GLOBAL_borderColor;
+  }
+
+  th {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: lighten($GLOBAL_color_primary, 48%);
+  }
+}
+
+.tableScore {
+  margin-top: 40px;
+}
+
+.sumScore {
+  font-weight: bold;
+  text-align: right;
+}
+
+.columnNumber {
+  width: 40px;
+}
+
+.columnScore {
+  width: 100px;
+}

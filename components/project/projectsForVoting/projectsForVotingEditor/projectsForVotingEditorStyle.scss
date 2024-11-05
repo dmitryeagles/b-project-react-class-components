@@ -1,0 +1,54 @@
+@import 'style/GLOBAL';
+
+.voteTitle {
+  padding-top: 10px;
+  text-align: left;
+  font-weight: bold;
+  font-size: $GLOBAL_fontSize;
+}
+
+.radioButtonContainer {
+  display: flex;
+  align-items: center;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  padding-top: 10px;
+}
+
+.selectedRadioButton {
+  color: $GLOBAL_color_primary;
+
+  .radioButtonActive {
+    @include GLOBAL_mixin_svgBgAsBase64('circle.svg', $GLOBAL_color_primary);
+  }
+}
+
+.radioButton {
+  $size: 30px;
+  width: $size;
+  height: $size;
+  border: 1px solid $GLOBAL_borderColor;
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  $animationTime: 0.2s;
+  transition: border-color $animationTime, box-shadow $animationTime;
+  flex-shrink: 0;
+  border-radius: 50%;
+
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+    box-shadow: 0 0 4px $GLOBAL_color_primary;
+  }
+}
+
+.radioButtonActive {
+  $icoSize: 16px;
+  background-repeat: no-repeat;
+  background-size: $icoSize $icoSize;
+  background-position: center;
+  @include GLOBAL_mixin_svgBgAsBase64('circle.svg');
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('circle.svg', $GLOBAL_color_primary);
+  }
+}

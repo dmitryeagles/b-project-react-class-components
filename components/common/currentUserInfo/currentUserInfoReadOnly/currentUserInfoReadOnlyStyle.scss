@@ -1,0 +1,33 @@
+@import 'style/GLOBAL';
+
+.userInfoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px 20px;
+}
+
+.userPersonalDataTitle {
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+.paddingTopTitle {
+  padding-top: 40px;
+}
+
+.loaderContainer {
+  text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+  .userInfoContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .userInfoContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

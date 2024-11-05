@@ -1,0 +1,18 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  background-color: $GLOBAL_panelBgColor;
+  border-radius: 10px;
+  $boxShadowSetting: 0 4px 20px;
+  box-shadow: $boxShadowSetting $GLOBAL_boxShadowPanelColor;
+  $animationTime: 0.5s;
+  transition: box-shadow $animationTime;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include GLOBAL_mixin_wordWrap;
+
+  &:hover {
+    box-shadow: $boxShadowSetting $GLOBAL_color_primary;
+  }
+}

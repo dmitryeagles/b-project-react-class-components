@@ -1,0 +1,20 @@
+@import 'style/GLOBAL';
+
+
+.link{
+    text-decoration: none;
+    margin-top: 15px;
+    color: black;
+    border-bottom: 1px solid #d8d8d8;
+    $animationTime: 0.2s;
+    transition: box-shadow $animationTime ease-in-out;
+    padding: 5px 10px;
+    &:hover{
+        box-shadow: 0px 3px 2px 1px rgba(0, 198, 255, 0.2);
+    }
+  }
+
+  .iconLeft {
+    margin-right: 3px;
+  }
+  

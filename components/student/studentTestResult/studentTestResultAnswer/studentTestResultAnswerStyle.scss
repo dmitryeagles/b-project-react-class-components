@@ -1,0 +1,60 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  margin-bottom: 10px;
+  padding: 10px 20px 10px 10px;
+  border-radius: 0 10px 10px 0;
+  box-sizing: border-box;
+  background-color: $GLOBAL_panelBgColor;
+  box-shadow: 0 2px 10px $GLOBAL_boxShadowPanelColor;
+}
+
+.answerContent {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.answerContentHTML {
+  @include GLOBAL_mixin_examTestContentHTML;
+}
+
+.answerTrue {
+  border-left: 5px solid $GLOBAL_color_successOrOkPrimary;
+}
+
+.answerFalse {
+  border-left: 5px solid $GLOBAL_color_errorOrCancelPrimary;
+}
+
+.checkBox {
+  $size: 25px;
+  width: $size;
+  height: $size;
+  box-sizing: border-box;
+  border: 1px solid $GLOBAL_borderColor;
+  display: inline-flex;
+  margin-right: 10px;
+  flex-shrink: 0;
+  cursor: help;
+}
+
+.checkBoxChecked {
+  @include GLOBAL_mixin_svgBgAsBase64('check.svg', $GLOBAL_fontColorPrimary);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70% 70%;
+}
+
+.answerHelpText {
+  padding-top: 10px;
+  font-size: $GLOBAL_fontSizeHelper;
+}
+
+.answerHelpTextTrue {
+  color: $GLOBAL_color_successOrOkPrimary;
+}
+
+.answerHelpTextFalse {
+  color: $GLOBAL_color_errorOrCancelPrimary;
+}

@@ -1,0 +1,15 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  text-align: center;
+}
+
+.loadingText {
+  text-align: center;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+.animationContainer {
+  width: 250px;
+  display: inline-block;
+}

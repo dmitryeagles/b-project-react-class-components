@@ -1,0 +1,39 @@
+@import 'style/GLOBAL';
+
+.container {
+  max-width: 100%;
+
+  .tableContainer {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+
+    table, th, td {
+      border: 1px solid $GLOBAL_borderColor;
+    }
+
+    th {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    td {
+      vertical-align: top;
+    }
+
+    th, td {
+      padding: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: lighten($GLOBAL_color_primary, 48%);
+    }
+  }
+}
+
+

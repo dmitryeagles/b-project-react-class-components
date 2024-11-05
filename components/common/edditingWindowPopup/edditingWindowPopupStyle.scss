@@ -1,0 +1,86 @@
+@import 'style/GLOBAL';
+
+.popupBackground {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $GLOBAL_popupBodyBgColor;
+  top: 0;
+  left: 0;
+  z-index: $GLOBAL_zIndex_popup;
+  @include GLOBAL_mixin_flexCenter();
+  animation: animation_popupOpacityIn 1s;
+}
+
+.popupBodySize {
+  width: 80%;
+  min-width: 340px;
+}
+
+.popupBody {
+  background-color: $GLOBAL_panelBgColor;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0 $GLOBAL_popupBodyBgColor;
+}
+
+.popupContentContainer {
+  padding: 5px 0 10px 0;
+}
+
+.popupTitle {
+  font-size: $GLOBAL_fontSizeSubtitle;
+  padding: 0 20px 15px 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.popupContent {
+  overflow-y: auto;
+}
+
+.popupContentSize {
+  padding: 0 20px 20px 20px;
+  max-height: 70vh;
+}
+
+.containerButtonClose {
+  text-align: right;
+  padding: 10px 10px 0 0;
+}
+
+.buttonClosePopup {
+  $icoSize: 16px;
+  display: inline-block;
+  width: $icoSize;
+  height: $icoSize;
+  color: $GLOBAL_borderColor;
+  cursor: pointer;
+  @include GLOBAL_mixin_svgBgAsBase64('x_close.svg', $GLOBAL_borderColor);
+  background-repeat: no-repeat;
+  background-size: $icoSize $icoSize;
+  background-position: center;
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('x_close.svg', $GLOBAL_color_errorOrCancelPrimary);
+  }
+}
+
+.documentBodyOverflowHidden {
+  overflow: hidden;
+}
+
+@keyframes animation_popupOpacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 750px), screen and (max-height: 600px) {
+  .popupBodySize {
+    width: 98%;
+  }
+}

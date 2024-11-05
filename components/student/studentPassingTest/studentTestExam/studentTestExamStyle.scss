@@ -1,0 +1,39 @@
+@import 'style/GLOBAL';
+
+.topButtonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  button {
+    margin: 0 0 0 10px;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .topButtonsContainer {
+    justify-content: center;
+
+    button {
+      margin: 10px 0 0 0;
+    }
+  }
+}
+
+.progressBarContainer {
+  padding-top: 20px;
+}
+
+.questionsButtonsContainer {
+  padding-top: 15px;
+}
+
+.titleAnswersList {
+  padding: 20px 0 10px 0;
+}
+
+.titleQuestion {
+  padding: 40px 0 10px 0;
+}

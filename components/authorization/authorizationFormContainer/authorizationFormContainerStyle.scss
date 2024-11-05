@@ -1,0 +1,35 @@
+@import '../../../style/GLOBAL';
+
+.loginFormContainer {
+  background: $GLOBAL_panelBgColor;
+  padding: 40px;
+  border-radius: 30px;
+  max-width: 700px;
+  width: 95%;
+  max-height: 95%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  animation: animation_loginFormOpacityIn 1s;
+  border: 1px solid $GLOBAL_borderColor;
+}
+
+.formTitleContainer {
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+@keyframes animation_loginFormOpacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 500px), screen and (max-height: 600px) {
+  .loginFormContainer {
+    padding: 20px 15px 40px 15px;
+  }
+}

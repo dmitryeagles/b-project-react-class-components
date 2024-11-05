@@ -1,0 +1,32 @@
+@import 'style/GLOBAL';
+
+.buttonFinishTest {
+  font-family: $GLOBAL_fontNamePrimary;
+  border: none;
+  outline: unset;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  @include GLOBAL_mixin_unselectableText;
+  border-radius: 30px;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime, color $animationTime;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  background-color: $GLOBAL_color_errorOrCancelPrimary;
+  height: 50px;
+  font-size: $GLOBAL_fontSize;
+  $icoSize:30px;
+  $paddingBtnSize: 15px;
+  background-repeat: no-repeat;
+  background-position: $paddingBtnSize center;
+  background-size: $icoSize $icoSize;
+  padding: 0 $paddingBtnSize 0 ($paddingBtnSize + $icoSize + 5px);
+  @include GLOBAL_mixin_svgBgAsBase64('flagFinish.svg', $GLOBAL_fontColorOnPrimaryColorBg);
+
+  &:hover {
+    background-color: darken($GLOBAL_color_errorOrCancelPrimary, 10%);
+  }
+}
+
+

@@ -1,0 +1,46 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  background-color: $GLOBAL_panelBgColor;
+  box-shadow: 0 3px 10px 5px $GLOBAL_boxShadowColor;
+  animation: animation_showMenu 0.3s;
+  -webkit-animation: animation_showMenu 0.3s;
+}
+
+.navigationContent {
+  max-height: 70vh;
+  overflow-x: auto;
+  padding: 0 20px 40px 20px;
+}
+
+.buttonCloseContainer {
+  padding: 10px 20px 0 0;
+  text-align: right;
+}
+
+.buttonClose {
+  $icoSize: 20px;
+  display: inline-block;
+  width: $icoSize;
+  height: $icoSize;
+  color: $GLOBAL_borderColor;
+  cursor: pointer;
+  @include GLOBAL_mixin_svgBgAsBase64('x_close.svg', $GLOBAL_borderColor);
+  background-repeat: no-repeat;
+  background-size: $icoSize $icoSize;
+  background-position: center;
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('x_close.svg', $GLOBAL_color_errorOrCancelPrimary);
+  }
+}
+
+@keyframes animation_showMenu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

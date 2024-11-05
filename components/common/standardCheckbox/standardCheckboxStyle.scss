@@ -1,0 +1,34 @@
+@import 'style/GLOBAL';
+
+$checkboxContainerSize: $GLOBAL_fontSize - 2px;
+
+.componentContainer {
+  display: flex;
+  align-items: center;
+}
+
+.checkboxContainer {
+  $size: $checkboxContainerSize;
+  width: $size;
+  height: $size;
+  border: 2px solid $GLOBAL_borderColor;
+  margin-right: 7px;
+  display: inline-block;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.checked {
+  @include GLOBAL_mixin_svgBgAsBase64('check.svg', $GLOBAL_fontColorPrimary);
+  background-repeat: no-repeat;
+  background-position: center;
+  $icoSize: $checkboxContainerSize - 2px;
+  background-size: $icoSize $icoSize;
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('check.svg', $GLOBAL_color_primary);
+  }
+}

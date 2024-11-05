@@ -1,0 +1,39 @@
+@import 'style/GLOBAL';
+
+$icoSize: 120px;
+
+.icoContainer {
+  height: $icoSize;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.icoDelete {
+  @include GLOBAL_mixin_svgBgAsBase64('trashColor.svg');
+}
+
+.icoError {
+  @include GLOBAL_mixin_svgBgAsBase64('errorMark.svg', $GLOBAL_color_errorOrCancelPrimary);
+}
+
+.icoConfirm {
+  @include GLOBAL_mixin_svgBgAsBase64('questionMark.svg', $GLOBAL_color_primary);
+}
+
+.icoSuccess {
+  @include GLOBAL_mixin_svgBgAsBase64('success.svg', $GLOBAL_color_successOrOkPrimary);
+}
+
+.messageContainer {
+  text-align: center;
+  font-size: $GLOBAL_fontSize;
+  padding: 10px 0;
+  font-weight: bold;
+  white-space: pre-wrap;
+}
+
+.popupConfirmButtonsCancel {
+  padding: 11px 16px;
+  font-size: $GLOBAL_fontSize;
+}

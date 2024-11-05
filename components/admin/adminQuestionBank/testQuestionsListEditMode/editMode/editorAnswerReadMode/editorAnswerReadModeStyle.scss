@@ -1,0 +1,38 @@
+@import 'style/GLOBAL';
+
+.answerTextLabel {
+  font-family: $GLOBAL_fontNameMedium;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
+  span:last-child {
+    font-style: normal;
+    font-weight: 500;
+    font-family: $GLOBAL_fontNameMedium;
+    line-height: 17px;
+    letter-spacing: 0.04em;
+  }
+}
+
+.answerStatusReadonly {
+  margin-top: 10px;
+  padding-left: 14px + 8px;
+
+  background-repeat: no-repeat;
+  background-position: left;
+  $icoSize: $GLOBAL_fontSize;
+  background-size: $icoSize $icoSize;
+}
+
+.answerStatusReadonlyTrue {
+  color: $GLOBAL_color_successOrOkPrimary;
+  @include GLOBAL_mixin_svgBgAsBase64('success.svg', $GLOBAL_color_successOrOkPrimary);
+}
+
+.answerStatusReadonlyFalse {
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  @include GLOBAL_mixin_svgBgAsBase64('cancelRound.svg', $GLOBAL_color_errorOrCancelPrimary);
+}

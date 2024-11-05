@@ -1,0 +1,33 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  $standardPadding: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $GLOBAL_color_primary;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  min-width: 190px;
+  height: 50px;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  $icoSize: $GLOBAL_fontSizeSubtitle;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-size: $icoSize $icoSize;
+  background-position: $standardPadding center;
+  box-sizing: border-box;
+  @include GLOBAL_mixin_svgBgAsBase64('timer.svg', $GLOBAL_fontColorOnPrimaryColorBg);
+  border-radius: 30px;
+  padding: $standardPadding $standardPadding $standardPadding ($standardPadding +  $icoSize + 3px);
+}
+
+.infinityIco {
+  display: inline-block;
+  $icoSize: 45px;
+  width: $icoSize;
+  height: $icoSize;
+  @include GLOBAL_mixin_svgBgAsBase64('infinity.svg', $GLOBAL_fontColorOnPrimaryColorBg);
+  background-size: $icoSize $icoSize;
+  background-position: center;
+  background-repeat: no-repeat;
+}

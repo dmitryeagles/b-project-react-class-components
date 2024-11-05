@@ -1,0 +1,44 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  display: inline-block;
+}
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+.inputDate {
+  @include GLOBAL_mixin_inputStyle();
+}
+
+.inputDateError {
+  @include GLOBAL_mixin_inputStyleError();
+}
+
+.buttonClearSelectedDate {
+  $closeIcoSize: 50% 50%;
+  width: 25px;
+
+  @include GLOBAL_mixin_svgBg('x_close.svg?fill=darkgray', $closeIcoSize);
+
+  &:hover {
+    @include GLOBAL_mixin_svgBg('x_close.svg?fill=firebrick', $closeIcoSize);
+  }
+
+  &:after {
+    content: none;
+  }
+}
+
+.buttonToday {
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_fontColorPrimary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

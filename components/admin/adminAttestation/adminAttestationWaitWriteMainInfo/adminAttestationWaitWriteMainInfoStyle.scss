@@ -1,0 +1,16 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.helpText {
+  text-align: center;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+.animationContainer {
+  width: 250px;
+  display: inline-block;
+}

@@ -1,0 +1,96 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  padding-bottom: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px 25px;
+}
+
+.bigFirstNews {
+  & > :first-child {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
+
+
+.allNewsLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 10px 40px 10px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: $GLOBAL_panelBgColor;
+  text-decoration: none;
+  cursor: pointer;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime, color $animationTime ease-in-out, box-shadow $animationTime ease-in-out;
+  box-shadow: 0 1px 7px rgb(0 125 237 / 26%);
+
+  &:hover {
+    animation: animation_mainCategoryList 0.4s forwards;
+    box-shadow: 0 1px 7px $GLOBAL_color_primary;
+
+    .allNewsImageContainer {
+      background-color: $GLOBAL_fontColorOnPrimaryColorBg;
+      color: $GLOBAL_color_primary;
+    }
+
+    .allNewsTextContainer {
+      color: $GLOBAL_fontColorOnPrimaryColorBg;
+    }
+  }
+}
+
+.allNewsImageLine {
+  text-align: center;
+}
+
+.allNewsImageContainer {
+  $icoSize: 70px;
+  height: $icoSize;
+  width: $icoSize;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: $GLOBAL_fontColorPrimary;
+  box-shadow: 0 1px 7px rgb(0 125 237 / 26%);
+}
+
+.allNewsTextContainer {
+  padding-top: 10px;
+  color: $GLOBAL_fontColorPrimary;
+  text-decoration: none;
+  font-family: $GLOBAL_fontNameMedium;
+  font-weight: 500;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+@keyframes animation_mainCategoryList {
+  $gradient: $GLOBAL_color_secondary 0%, $GLOBAL_color_primary 100%;
+  @for $i from 0 through 10 {
+    $percent: $i*10%;
+    #{$percent} {
+      background: radial-gradient($percent 50%, $gradient);
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .componentContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .componentContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,27 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  margin-bottom: 10px;
+  @include GLOBAL_mixin_wordWrap;
+}
+
+.labelContainer {
+  text-align: left;
+  font-weight: bold;
+  font-size: $GLOBAL_fontSize;
+}
+
+.contentContainer {
+  padding-top: 5px;
+}
+
+.helpTextLine {
+  font-size: $GLOBAL_fontSizeHelper;
+  padding-top: 5px;
+}
+
+.requiredStar {
+  padding-left: 3px;
+  cursor: help;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+}

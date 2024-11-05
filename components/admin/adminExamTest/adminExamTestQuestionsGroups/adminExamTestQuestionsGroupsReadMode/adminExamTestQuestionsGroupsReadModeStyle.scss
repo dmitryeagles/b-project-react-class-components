@@ -1,0 +1,17 @@
+.questionsGroupsListContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .questionsGroupsListContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .questionsGroupsListContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

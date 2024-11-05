@@ -1,0 +1,47 @@
+@import 'style/GLOBAL';
+.buttonsActionsContainer {
+  padding: 20px 0px 10px 10px;
+  text-align: right;
+}
+
+@mixin mixin_buttonAction($buttonColor) {
+  background-color: $buttonColor;
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.buttonAction {
+  font-size: $GLOBAL_fontSizeHelper;
+  cursor: pointer;
+  width: 120px;
+  height: 26px;
+  border-radius: 20px;
+  font-family: $GLOBAL_fontNamePrimary;
+  outline: none;
+  color: $GLOBAL_fontColorOnAnyBg;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  margin: 5px 0 0 10px;
+  text-decoration: none;
+}
+
+.buttonActionDelete {
+  $btnDeleteColor: $GLOBAL_color_cancelPrimary;
+  @include mixin_buttonAction($btnDeleteColor);
+}
+
+.buttonActionEdit {
+  $btnEditColor: $GLOBAL_color_primary;
+  @include mixin_buttonAction($btnEditColor);
+}
+
+.testTitle {
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  padding-bottom: 20px;
+}

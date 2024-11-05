@@ -1,0 +1,61 @@
+@import 'style/GLOBAL';
+$checkBoxSize: 30px;
+
+.answerContainer {
+  margin-top: 20px;
+  padding: 20px;
+  $borderRadiusValue: 10px;
+  border-radius: $borderRadiusValue;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.answerContentHTML {
+  @include GLOBAL_mixin_examTestContentHTML;
+}
+
+.userAnswerStatus {
+  width: $checkBoxSize !important;
+  height: $checkBoxSize !important;
+  max-height: $checkBoxSize !important;
+  min-height: $checkBoxSize !important;
+  max-width: $checkBoxSize !important;
+  min-width: $checkBoxSize !important;
+  flex-shrink: 0;
+
+  display: inline-block;
+  border: 2px solid $GLOBAL_borderColor;
+  cursor: pointer;
+  margin-right: 10px;
+  $animationTime: 0.3s;
+  transition: border-color $animationTime;
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.checkBox{
+  $icoSize: 24px;
+  background-size: $icoSize $icoSize;
+}
+
+.radioButton {
+  border-radius: 50%;
+  $icoSize: 20px;
+  background-size: $icoSize $icoSize;
+}
+
+
+.userAnswerStatusChecked {
+  @include GLOBAL_mixin_svgBgAsBase64('check.svg', $GLOBAL_fontColorPrimary);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('check.svg', $GLOBAL_color_primary);
+  }
+}

@@ -1,0 +1,47 @@
+@import 'style/GLOBAL';
+
+.popupBodySize {
+  width: 95%;
+  min-width: 340px;
+}
+
+.questionItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+.questionItemContent {
+  padding: 20px;
+}
+
+.buttonSelectQuestion{
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  background-color: $GLOBAL_color_primary;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  cursor: pointer;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  border: none;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%);
+  }
+}
+
+.questionsListContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px 20px;
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .questionsListContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

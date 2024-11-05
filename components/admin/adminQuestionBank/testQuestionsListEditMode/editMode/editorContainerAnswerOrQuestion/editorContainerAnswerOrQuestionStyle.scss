@@ -1,0 +1,66 @@
+@import 'style/GLOBAL';
+
+@mixin mixin_standardButton($bgColor) {
+  background-color: $bgColor;
+
+  &:hover {
+    background-color: darken($bgColor, 10%);
+  }
+}
+
+.componentContainer {
+  background-color: $GLOBAL_panelBgColor;
+  border-radius: 10px;
+  $boxShadowSetting: 0 4px 20px;
+  box-shadow: $boxShadowSetting $GLOBAL_boxShadowPanelColor;
+  $animationTime: 0.5s;
+  transition: box-shadow $animationTime;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 31px;
+  box-sizing: border-box;
+
+  &:hover {
+    box-shadow: $boxShadowSetting $GLOBAL_color_primary;
+  }
+}
+
+.buttonsActionsContainer {
+  padding: 10px 0 5px 0;
+  text-align: right;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.buttonAction {
+  font-size: 14px;
+  margin-left: 10px;
+  border-radius: 10px;
+  font-family: $GLOBAL_fontNamePrimary;
+  padding: 8px 18px;
+
+  svg {
+    margin-right: 3px;
+  }
+}
+
+.buttonActionStartDelete {
+  @include mixin_standardButton($GLOBAL_color_cancelPrimary);
+  margin-left: 10px;
+}
+
+.buttonActionStartEdit {
+  @include mixin_standardButton($GLOBAL_color_primary);
+}
+
+.buttonActionCancelEdit {
+  @include mixin_standardButton($GLOBAL_color_cancelPrimary);
+  margin-left: 10px;
+}
+
+.buttonActionSaveEdit {
+  @include mixin_standardButton($GLOBAL_color_primary);
+}

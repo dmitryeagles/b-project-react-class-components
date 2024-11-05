@@ -1,0 +1,28 @@
+@import 'style/GLOBAL';
+
+.testResultTitle {
+  font-size: $GLOBAL_fontSizeSubtitle;
+  padding-bottom: 10px;
+}
+
+.testResultTitleTrue {
+  color: $GLOBAL_color_successOrOkPrimary;
+}
+
+.testResultTitleFalse {
+  color: $GLOBAL_color_errorOrCancelPrimary;
+}
+
+.numberOfPointsContainer {
+  font-size: $GLOBAL_fontSizeSubtitle;
+  padding-bottom: 10px;
+}
+
+.buttonReturnContainer {
+  padding-bottom: 40px;
+}
+
+.numberOfPoints {
+  color: $GLOBAL_color_primary;
+}
+

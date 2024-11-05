@@ -1,0 +1,101 @@
+@import 'style/GLOBAL';
+
+@mixin mixin_buttonHandler($hoverColor) {
+  &:hover {
+    color: $hoverColor;
+  }
+}
+
+$leftHandlerButtonsPanelWidth: 25px;
+
+.componentContainer {
+  display: inline-block;
+
+  &:hover {
+    :global {
+      .rc-input-number-handler-wrap {
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+.inputNumeric {
+  font-size: $GLOBAL_fontSize;
+  font-family: $GLOBAL_fontNamePrimary;
+  color: $GLOBAL_fontColorPrimary;
+  display: inline-block;
+  position: relative;
+}
+
+.buttonHandler {
+  height: 50%;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  color: $GLOBAL_borderColor;
+  font-size: $GLOBAL_fontSize;
+  $animationTime: 0.5s;
+  transition: color $animationTime ease-in-out;
+  @include GLOBAL_mixin_flexCenter();
+}
+
+.buttonHandlerPlus {
+  @include mixin_buttonHandler($GLOBAL_color_successOrOkPrimary);
+}
+
+.buttonHandlerMinus {
+  @include mixin_buttonHandler($GLOBAL_color_errorOrCancelPrimary);
+}
+
+.haveError {
+  input {
+    @include GLOBAL_mixin_inputStyleError();
+  }
+}
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+:global {
+  .rc-input-number-input {
+    @include GLOBAL_mixin_inputStyle(true);
+    font-size: $GLOBAL_fontSize;
+    border-radius: 10px;
+    box-sizing: border-box;
+    $animationTime: 0.3s;
+    transition: background-color $animationTime, border-color $animationTime;
+    font-family: $GLOBAL_fontNamePrimary;
+    padding: 10px ($leftHandlerButtonsPanelWidth+5px) 10px 10px;
+    max-width: 300px;
+    min-width: 150px;
+
+
+    &:active,
+    &:focus-visible,
+    &:focus {
+      background-color: $GLOBAL_inputBgColorHover;
+      border-color: $GLOBAL_inputBorderColorHover;
+    }
+  }
+
+  .rc-input-number-handler-wrap {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: $leftHandlerButtonsPanelWidth;
+    padding: 2px;
+    margin-right: 3px;
+    box-sizing: border-box;
+    height: 100%;
+
+    $animationTime: 0.3s;
+    transition: opacity $animationTime;
+  }
+}

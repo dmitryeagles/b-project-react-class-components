@@ -1,0 +1,26 @@
+@use 'sass:math';
+@import 'style/GLOBAL';
+
+.componentContainer {
+  padding-bottom: 15px;
+  @include GLOBAL_mixin_wordWrap;
+  @include GLOBAL_mixin_examTestContentHTML;
+}
+
+.newsTextContainer {
+  font-size: $GLOBAL_fontSize;
+  margin-bottom: 15px;
+}
+
+.buttonDownloadFileContainer {
+  text-align: right;
+  padding-bottom: 20px;
+}
+
+.newsCreated {
+  border-top: 1px solid $GLOBAL_borderColor;
+  text-align: right;
+  margin-top: 10px;
+  font-size: $GLOBAL_fontSizeHelper;
+  font-style: italic;
+}

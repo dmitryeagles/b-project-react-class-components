@@ -1,0 +1,93 @@
+@import 'style/GLOBAL';
+
+.withoutPreviewImage {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-position: center;
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  @include GLOBAL_mixin_svgBgAsBase64('pictureEdit.svg', $GLOBAL_fontColorPrimary);
+}
+
+.areaActionButtonsUploadImgFile {
+  background-color: $GLOBAL_popupBodyBgColor;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $GLOBAL_zIndex_min;
+}
+
+.inputFileImage {
+  display: none !important;
+}
+
+.actionButtonAddFileContainer {
+  display: block;
+}
+
+.actionButtonRemoveFileContainer {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.actionButtonsContainer {
+  text-align: center;
+}
+
+.actionButton {
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.5s;
+  display: inline-block;
+}
+
+.actionButtonIncrease{
+  background-color: $GLOBAL_color_primary;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  padding: 5px 20px;
+  margin-top: 10px;
+
+
+  &:hover {
+    background-color: lighten($GLOBAL_color_primary, 20%);
+  }
+}
+.actionButtonAddFile {
+  background-color: $GLOBAL_color_primary;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  padding: 5px 20px;
+
+  &:hover {
+    background-color: lighten($GLOBAL_color_primary, 20%);
+  }
+}
+
+.actionButtonRemoveFile {
+  background-color: $GLOBAL_color_errorOrCancelPrimary;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  padding: 5px 20px;
+
+  &:hover {
+    background-color: lighten($GLOBAL_color_errorOrCancelPrimary, 10%);
+  }
+}
+
+.errorTextInvalidFileImg {
+  padding: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba($GLOBAL_panelBgColor, 0.85);
+  box-sizing: border-box;
+}

@@ -1,0 +1,19 @@
+@import 'style/GLOBAL';
+
+.buttonLogoutSystem {
+  color: $GLOBAL_fontColorOnAnyBg;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: $GLOBAL_fontSize;
+  $icoSize: 20px;
+  padding-right: $icoSize + 10px;
+  background-position: right;
+  background-size: $icoSize $icoSize;
+  background-repeat: no-repeat;
+  @include GLOBAL_mixin_svgBgAsBase64('logout.svg', $GLOBAL_fontColorOnAnyBg);
+  flex-shrink: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

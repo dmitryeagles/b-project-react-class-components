@@ -1,0 +1,48 @@
+@import 'style/GLOBAL';
+
+.loginUserName {
+  padding-left: 10px;
+  display: inline-block;
+  color: $GLOBAL_fontColorOnAnyBg;
+  font-size: $GLOBAL_fontSize;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.mobileBtn {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  background-color: $GLOBAL_color_primary;
+  background-position: center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  display: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%);
+  }
+}
+
+.mobileBtnCurrentUser {
+  @include GLOBAL_mixin_svgBgAsBase64('userWithTie.svg', $GLOBAL_fontColorOnAnyBg);
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 540px) {
+  .fullSizeBtn {
+    display: none;
+  }
+
+  .mobileBtn {
+    display: inline-block;
+  }
+}

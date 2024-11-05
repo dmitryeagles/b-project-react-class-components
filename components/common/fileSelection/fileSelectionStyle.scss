@@ -1,0 +1,73 @@
+@import 'style/GLOBAL';
+
+.chooseFile {
+  display: inline-block;
+  color: $GLOBAL_color_primary;
+  cursor: pointer;
+  margin: 5px 10px 5px 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.removeCurrentFile {
+  display: inline-block;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  cursor: pointer;
+  margin: 5px 10px 5px 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.inputFileHidden {
+  display: none !important;
+}
+
+.selectedFileContainer {
+  border: 1px solid $GLOBAL_borderColor;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.lineFileInfo {
+  padding-bottom: 5px;
+}
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+}
+
+.actionButton {
+  display: inline-block;
+  cursor: pointer;
+  margin: 5px 10px 5px 0;
+  transition: box-shadow .5s ease;
+}
+
+.actionButtonResetSelectedFile {
+  color: $GLOBAL_color_errorOrCancelPrimary;
+
+  &:hover {
+    box-shadow: 0 1px 0 $GLOBAL_color_errorOrCancelPrimary;
+  }
+}
+
+.actionButtonChooseAnotherFile {
+  color: $GLOBAL_color_primary;
+
+  &:hover {
+    box-shadow: 0 1px 0 $GLOBAL_color_primary;
+  }
+}

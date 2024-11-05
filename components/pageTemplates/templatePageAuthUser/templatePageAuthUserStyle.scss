@@ -1,0 +1,93 @@
+@import 'style/GLOBAL';
+
+$maxWidth: 95%;
+$contentOverlapHeader: 50px;
+$bigHeaderMinHeight: 200px;
+
+.bigHeaderArea {
+  min-height: $bigHeaderMinHeight;
+  width: 100%;
+  padding-bottom: $contentOverlapHeader;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(265deg, $GLOBAL_color_primary 25%, $GLOBAL_color_secondary 90%);
+}
+
+.linkBack {
+  $animationTime: 0.5s;
+  $icoSize: 40px;
+  display: inline-block;
+  @include GLOBAL_mixin_svgBgAsBase64('arrowLeftThin.svg', $GLOBAL_fontColorOnPrimaryColorBg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90% 90%;
+  width: $icoSize;
+  height: $icoSize;
+  margin-right: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: background-color $animationTime, box-shadow $animationTime;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $GLOBAL_color_primary;
+    box-shadow: 0 0 10px 0 $GLOBAL_fontColorOnPrimaryColorBg;
+  }
+}
+
+.headerContentContainer {
+  max-width: $maxWidth;
+  width: 100%;
+  padding: 10px 0 40px 0;
+  box-sizing: border-box;
+}
+
+.contentContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  top: -$contentOverlapHeader;
+}
+
+.contentPage {
+  max-width: $maxWidth;
+  width: 100%;
+  padding: 20px 30px 50px 30px;
+  box-sizing: border-box;
+  background-color: $GLOBAL_panelBgColor;
+  border-radius: 10px;
+  box-shadow: 0 1px 9px $GLOBAL_boxShadowColor;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.pageTitleContainer {
+  padding-top: $bigHeaderMinHeight - 50px;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  font-family: $GLOBAL_fontNameLight;
+  font-size: $GLOBAL_fontSizeTitle;
+  padding-bottom: 10px;
+  @include GLOBAL_mixin_wordWrap;
+}
+
+@media screen and (max-width: 900px) {
+  .pageTitleContainer {
+    font-size: $GLOBAL_fontSizeSubtitle;
+  }
+
+  .contentPage {
+    max-width: unset;
+    padding: 20px 20px 50px 20px;
+  }
+
+  .headerContentContainer {
+    max-width: unset;
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,68 @@
+@import 'style/GLOBAL';
+
+$buttonIcoSize: 15px;
+$icoPadding: 10px;
+
+.componentContainer {
+  text-align: center;
+}
+
+.questionControlButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $GLOBAL_fontNamePrimary;
+  border: none;
+  outline: unset;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  @include GLOBAL_mixin_unselectableText;
+  border-radius: 30px;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime, color $animationTime;
+  font-size: $GLOBAL_fontSize;
+  background-repeat: no-repeat;
+  background-size: $buttonIcoSize $buttonIcoSize;
+  width: 230px;
+  height: 40px;
+  margin: 5px;
+}
+
+.actionButton {
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  background-color: $GLOBAL_color_primary;
+
+  &:hover {
+    background-color: lighten($GLOBAL_color_primary, 10%);
+  }
+}
+
+.disabledButton {
+  color: $GLOBAL_fontColorOnAnyBg;
+  background-color: $GLOBAL_color_disabledPrimary;
+
+  &:hover {
+    background-color: lighten($GLOBAL_color_disabledPrimary, 10%);
+  }
+}
+
+.icoNextButton {
+  @include GLOBAL_mixin_svgBgAsBase64('arrowRight.svg', $GLOBAL_fontColorOnPrimaryColorBg);
+}
+
+.icoPrevButton {
+  @include GLOBAL_mixin_svgBgAsBase64('arrowLeft.svg', $GLOBAL_fontColorOnPrimaryColorBg);
+}
+
+.icoDisabledButton {
+  @include GLOBAL_mixin_svgBgAsBase64('forbidden.svg', $GLOBAL_fontColorOnPrimaryColorBg);
+}
+
+.buttonNextQuestion {
+  background-position: right $icoPadding center;
+}
+
+.buttonPrevQuestion {
+  background-position: left $icoPadding center;
+}

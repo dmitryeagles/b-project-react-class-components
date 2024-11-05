@@ -1,0 +1,4 @@
+@import 'style/GLOBAL';
+.questionContentHTML{
+  @include GLOBAL_mixin_examTestContentHTML;
+}

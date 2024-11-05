@@ -1,0 +1,74 @@
+@import 'style/GLOBAL';
+
+.tableContainer {
+  table, th, td {
+    border: 1px solid $GLOBAL_borderColor;
+  }
+
+  th {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  td {
+    vertical-align: top;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead {
+    background-color: lighten($GLOBAL_color_primary, 48%);
+  }
+}
+
+.userAnswerFirst {
+  border-left: 2px solid $GLOBAL_color_primary;
+  padding: 5px;
+}
+
+.userAnswer {
+  border-left: 2px solid $GLOBAL_color_primary;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.answerContentHTML {
+  @include GLOBAL_mixin_examTestContentHTML();
+}
+
+.questionContentHtml {
+  @include GLOBAL_mixin_examTestContentHTML();
+}
+
+.cellStatus {
+  width: 115px;
+  text-align: center;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+.cellStatusSuccess {
+  color: $GLOBAL_color_successOrOkPrimary;
+  background-color: lighten($GLOBAL_color_successOrOkPrimary, 40%);
+}
+
+.cellStatusError  {
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  background-color: lighten($GLOBAL_color_errorOrCancelPrimary, 20%);
+}
+
+.reportMainInfoContainer {
+  padding-bottom: 30px;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  line-height: 1.5;
+}
+
+.textPrimary {
+  color: $GLOBAL_color_primary;
+}

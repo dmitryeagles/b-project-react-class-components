@@ -1,0 +1,43 @@
+@import 'style/GLOBAL';
+
+@mixin mixin_buttonAction($buttonColor) {
+  background-color: $buttonColor;
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.buttonsActionsContainer {
+  padding: 0 25px 20px 25px;
+  text-align: right;
+
+  button {
+    width: 120px;
+    height: 26px;
+  }
+}
+
+.buttonAction {
+  font-size: $GLOBAL_fontSizeHelper;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: $GLOBAL_fontNamePrimary;
+  outline: none;
+  color: $GLOBAL_fontColorOnAnyBg;
+  transition: background-color 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: unset;
+  margin: 5px 0 0 10px;
+}
+
+.buttonActionDelete {
+  $btnDeleteColor: $GLOBAL_color_cancelPrimary;
+  @include mixin_buttonAction($btnDeleteColor);
+}
+
+.buttonActionEdit {
+  $btnEditColor: $GLOBAL_color_primary;
+  @include mixin_buttonAction($btnEditColor);
+}

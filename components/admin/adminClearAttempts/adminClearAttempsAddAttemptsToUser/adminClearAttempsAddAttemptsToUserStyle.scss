@@ -1,0 +1,101 @@
+@import 'style/GLOBAL';
+
+@mixin mixin_buttonAction($buttonColor) {
+  background-color: $buttonColor;
+  &:hover {
+    background-color: darken($buttonColor, 10%);
+  }
+}
+
+.componentContainer {
+  padding-bottom: 20px;
+}
+.dropdownTestAndUserContainer{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 70px 120px;
+  grid-gap: 10px 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.inputCell{
+  input{
+    width: 100%;
+    min-width: 50px;
+    max-width: 65px;
+  }
+}
+.btnContainerItemDescription{
+  padding: 15px;
+  margin: 5px;
+  box-shadow: 0 1px 9px #a0d0fc;
+  transition: box-shadow 0.5s ease 0s;
+  cursor: pointer;
+  border-radius: 10px;
+  align-items: center;
+    p{
+      font-weight: normal;
+      padding-right: 15px;
+      font-size: 16px;
+      margin: 0;
+      padding-bottom: 5px;
+      border-bottom: 1px;
+      border-bottom-style: solid;
+      border-color: #d8d8d8;
+      padding-left: 10px;
+      margin-bottom: 15px;
+      margin-right: 165px;
+    }
+    &:hover{
+      box-shadow: 0 1px 9px $GLOBAL_color_primary;
+    }
+}
+.iconBtn{
+  font-size: 20px;
+  color: $GLOBAL_color_primary;
+  background-color: transparent;
+  transition: box-shadow 0.5s ease 0s;
+  width: fit-content;
+  padding: 6px 10px;
+  border-style: double;
+  border-radius: 10px;
+  height: fit-content;
+    span{
+      margin: 0;
+    }
+    &:hover {
+      color: darken($GLOBAL_color_successOrOkPrimary, 10%);
+      background-color:transparent;
+      animation: pulse 1s infinite;
+    }
+}
+.iconBtn {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .dropdownTestAndUserContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .dropdownTestAndUserContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

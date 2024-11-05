@@ -1,0 +1,99 @@
+@import 'style/GLOBAL';
+
+.itemUser {
+  padding: 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userFullName {
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  padding-bottom: 20px;
+}
+
+.simpleListItem {
+  margin: 3px;
+  padding: 5px 20px;
+  border: 1px solid $GLOBAL_color_primary;
+  display: inline-block;
+  border-radius: 20px;
+  cursor: help;
+}
+
+.needChangePasswordContainer {
+  padding: 5px 0 0 0;
+}
+
+.needChangePassword {
+  background-color: $GLOBAL_color_errorOrCancelPrimary;
+  padding: 5px 20px;
+  color: $GLOBAL_fontColorOnAnyBg;
+  display: inline-block;
+  border-radius: 30px;
+}
+
+.needChangePasswordHelpText {
+  font-size: $GLOBAL_fontSizeHelper;
+  padding-top: 5px;
+}
+
+
+.buttonShowDetailUserInfoContainer{
+  float: left;
+  padding-top: 10px;
+}
+
+.buttonShowHistoryUserInfoContainer {
+  float: right;
+  padding-top: 10px;
+}
+
+
+
+.buttonShowDetailUserInfo, .buttonShowHistoryUserInfo {
+  color: $GLOBAL_color_primary;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: unset;
+  transition: box-shadow 0.3s;
+  font-family: $GLOBAL_fontNameMedium;
+
+  &:hover {
+    box-shadow: 0 1px 0 $GLOBAL_color_primary;
+  }
+}
+
+.buttonShowDetailUserInfo {
+  background-position: right;
+  padding-right: $GLOBAL_fontSize;
+  background-repeat: no-repeat;
+  $icoSize: 12px;
+  background-size: $icoSize $icoSize;
+}
+
+.buttonShowDetailUserInfoClose {
+  @include GLOBAL_mixin_svgBgAsBase64('arrowDown.svg', $GLOBAL_color_primary);
+}
+
+.buttonShowDetailUserInfoOpen {
+  @include GLOBAL_mixin_svgBgAsBase64('arrowTop.svg', $GLOBAL_color_primary);
+}
+
+@media screen and (max-width: 630px) {
+  .buttonShowDetailUserInfoContainer{
+    float: none;
+  }
+
+  .buttonShowHistoryUserInfoContainer {
+    float: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .itemUser {
+    width: 100%;
+  }
+}

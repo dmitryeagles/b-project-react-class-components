@@ -1,0 +1,25 @@
+@import 'style/GLOBAL';
+
+.isChangeValue {
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  cursor: help;
+}
+
+.historyListContainer {
+  display: block;
+}
+
+.itemUser {
+  padding: 15px 20px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.loaderContainer {
+  text-align: center;
+}

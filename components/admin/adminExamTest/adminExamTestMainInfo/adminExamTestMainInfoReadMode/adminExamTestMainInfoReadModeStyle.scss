@@ -1,0 +1,17 @@
+@import 'style/GLOBAL';
+
+.testTitle {
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  padding-bottom: 20px;
+}
+
+.buttonsContainer {
+  button {
+    width: 125px;
+  }
+
+  text-align: right;
+  padding-top: 20px;
+}

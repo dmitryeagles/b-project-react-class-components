@@ -1,0 +1,57 @@
+@import 'style/GLOBAL';
+
+.buttonRoles {
+  margin-right: 20px;
+  color: $GLOBAL_fontColorOnAnyBg;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: $GLOBAL_fontSize;
+  $icoSize: 16px;
+  padding-right: $icoSize;
+  background-position: right;
+  background-size: $icoSize $icoSize;
+  background-repeat: no-repeat;
+  @include GLOBAL_mixin_svgBgAsBase64('caretDown.svg', $GLOBAL_fontColorOnAnyBg);
+  flex-shrink: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.mobileBtn {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  background-color: $GLOBAL_color_primary;
+  background-position: center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  display: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%);
+  }
+}
+
+.mobileBtnRoles {
+  @include GLOBAL_mixin_svgBgAsBase64('users.svg', $GLOBAL_fontColorOnAnyBg);
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 540px) {
+  .fullSizeBtn {
+    display: none;
+  }
+
+  .mobileBtn {
+    display: inline-block;
+  }
+
+  .mobileBtnRoles {
+    margin-right: 5px;
+  }
+}

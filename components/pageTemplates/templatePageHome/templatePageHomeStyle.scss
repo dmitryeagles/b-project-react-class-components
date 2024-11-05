@@ -1,0 +1,128 @@
+@import 'style/GLOBAL';
+
+$maxWidth: $GLOBAL_maxContentWidth;
+$contentOverlapHeader: 50px;
+
+.bigHeaderImageContainer {
+  min-height: 350px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include GLOBAL_mixin_svgBgAsUrl('blue-angles.svg');
+  padding-bottom: $contentOverlapHeader;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: lighten($GLOBAL_color_primary, 10%);
+}
+
+.headerContentContainer {
+  max-width: $maxWidth;
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  box-sizing: border-box;
+}
+
+.headerBigTextGreetings {
+  font-size: 64px;
+  text-align: left;
+  @include GLOBAL_mixin_wordWrap;
+  @include GLOBAL_mixin_textShadow($GLOBAL_fontColorOnAnyBg, $GLOBAL_fontColorPrimary);
+}
+
+.headerTextInfo {
+  line-height: 4;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  @include GLOBAL_mixin_textShadow($GLOBAL_fontColorOnAnyBg, $GLOBAL_fontColorPrimary);
+}
+
+.contentContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  top: -$contentOverlapHeader;
+  z-index: $GLOBAL_zIndex_min;
+}
+
+.contentPage {
+  max-width: $maxWidth;
+  width: 100%;
+  padding: 0 10px 40px 10px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1160px) {
+  .headerContentContainer {
+    max-width: $maxWidth;
+    width: 100%;
+    padding: 10px 10px 30px 10px;
+    box-sizing: border-box;
+  }
+
+  .headerBigTextGreetings {
+    font-size: 55px;
+    @include GLOBAL_mixin_wordWrap;
+    text-align: left;
+    @include GLOBAL_mixin_textShadow($GLOBAL_fontColorOnAnyBg, $GLOBAL_fontColorPrimary);
+  }
+
+  .headerTextInfo {
+    padding-top: 20px;
+    line-height: 1.5;
+    font-size: 25px;
+    text-align: left;
+    @include GLOBAL_mixin_textShadow($GLOBAL_fontColorOnAnyBg, $GLOBAL_fontColorPrimary);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .headerContentContainer {
+    max-width: $maxWidth;
+    width: 100%;
+    padding: 10px 10px 40px 10px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .headerBigTextGreetings {
+    font-size: 45px;
+    @include GLOBAL_mixin_wordWrap;
+    text-align: left;
+    @include GLOBAL_mixin_textShadow($GLOBAL_fontColorOnAnyBg, $GLOBAL_fontColorPrimary);
+  }
+
+  .headerTextInfo {
+    padding-top: 15px;
+    line-height: 1.5;
+    font-size: 20px;
+    text-align: left;
+    @include GLOBAL_mixin_textShadow($GLOBAL_fontColorOnAnyBg, $GLOBAL_fontColorPrimary);
+  }
+}
+
+@media screen and (max-width: 720px) {
+
+  .bigHeaderImageContainer {
+    min-height: 250px;
+  }
+
+  .headerContentContainer {
+    padding: 10px 10px 20px 10px;
+  }
+
+  .headerBigTextGreetings {
+    font-size: $GLOBAL_fontSizeSubtitle;
+    @include GLOBAL_mixin_wordWrap;
+    text-align: center;
+    @include GLOBAL_mixin_textShadow($GLOBAL_fontColorOnAnyBg, $GLOBAL_fontColorPrimary);
+  }
+
+  .headerTextInfo {
+    font-size: $GLOBAL_fontSize;
+    text-align: center;
+    @include GLOBAL_mixin_wordWrap;
+    @include GLOBAL_mixin_textShadow($GLOBAL_fontColorOnAnyBg, $GLOBAL_fontColorPrimary);
+  }
+}

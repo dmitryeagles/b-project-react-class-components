@@ -1,0 +1,16 @@
+@import '../../../style/GLOBAL';
+
+.imgMailContainer {
+  $icoSize: 140px;
+  @include GLOBAL_mixin_svgBgAsBase64('mail.svg?fill='+GLOBAL_function_convertColorToStr($GLOBAL_fontColorPrimary));
+  height: $icoSize;
+  background-repeat: no-repeat;
+  background-size: $icoSize $icoSize;
+  background-position: center;
+}
+
+.helpTextContainer {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}

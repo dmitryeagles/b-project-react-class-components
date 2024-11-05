@@ -1,0 +1,19 @@
+@import 'style/GLOBAL';
+
+.containerReadonlyText {
+  width: 100%;
+  @include GLOBAL_mixin_inputEmulatorReadonly();
+  background: $GLOBAL_panelBgColor;
+  border: 1px solid $GLOBAL_borderColor;
+  border-radius: 10px;
+  min-height: 78px;
+
+  @include GLOBAL_mixin_examTestContentHTML;
+}
+
+
+.placeholderText {
+  width: 100%;
+  @include GLOBAL_mixin_inputEmulatorReadonly($GLOBAL_fontColorHelpText);
+  @include GLOBAL_mixin_unselectableText;
+}

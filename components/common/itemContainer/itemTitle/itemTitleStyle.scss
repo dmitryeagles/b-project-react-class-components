@@ -1,0 +1,8 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  font-weight: bold;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  padding-bottom: 20px;
+}

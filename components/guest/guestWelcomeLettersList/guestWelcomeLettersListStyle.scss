@@ -1,0 +1,46 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px 25px;
+}
+
+.newsContainer {
+  background-color: $GLOBAL_panelBgColor;
+  padding: 20px 10px 20px 10px;
+  box-sizing: border-box;
+  font-family: $GLOBAL_fontNameMedium;
+  box-shadow: 0 4px 12px rgba(0, 125, 237, 0.26);
+  border-radius: 10px;
+}
+
+.newsTextContainer {
+  font-size: $GLOBAL_fontSizeHelper;
+  white-space: pre-wrap;
+  text-indent: 1em;
+  line-height: 1;
+}
+
+.image {
+  float: left;
+  margin: 0 10px 5px 0;
+  height: 140px;
+}
+
+@media screen and (max-width: 1140px) {
+  .componentContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .componentContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .newsContainer {
+    display: block;
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+@import 'style/GLOBAL';
+
+.inputText {
+  @include GLOBAL_mixin_inputStyle();
+}
+
+.inputStatusError {
+  @include GLOBAL_mixin_inputStyleError();
+}
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}

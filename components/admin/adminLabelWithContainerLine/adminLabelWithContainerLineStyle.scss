@@ -1,0 +1,26 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $GLOBAL_borderColor;
+  transition: border-color  0.4s;
+  @include GLOBAL_mixin_wordWrap;
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.labelContainer {
+  display: inline-block;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.labelIco {
+  $icoSize: $GLOBAL_fontSize;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: $icoSize $icoSize;
+  padding-left: $icoSize + 2px;
+}

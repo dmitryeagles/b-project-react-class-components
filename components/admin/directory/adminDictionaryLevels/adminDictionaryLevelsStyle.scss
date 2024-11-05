@@ -1,0 +1,13 @@
+@import 'style/GLOBAL';
+
+.icoFactory {
+  @include GLOBAL_mixin_svgBgAsBase64('factory.svg', $GLOBAL_fontColorPrimary);
+}
+
+.icoLevelName {
+  @include GLOBAL_mixin_svgBgAsBase64('schoolHat.svg', $GLOBAL_fontColorPrimary);
+}
+
+.icoPriority {
+  @include GLOBAL_mixin_svgBgAsBase64('level.svg', $GLOBAL_fontColorPrimary);
+}

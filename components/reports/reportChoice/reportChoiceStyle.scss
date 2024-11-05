@@ -1,0 +1,27 @@
+@import 'style/GLOBAL';
+
+.reportLink {
+  display: block;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: $GLOBAL_panelBgColor;
+  $boxShadowSetting: 0 4px 20px;
+  box-shadow: $boxShadowSetting $GLOBAL_boxShadowPanelColor;
+  $animationTime: 0.5s;
+  transition: box-shadow $animationTime;
+  cursor: pointer;
+  color: $GLOBAL_fontColorPrimary;
+  text-decoration: none;
+  @include GLOBAL_mixin_svgBgAsBase64('arrowRight.svg', $GLOBAL_borderColor);
+  background-position: center right 10px;
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+
+  &:hover {
+    box-shadow: $boxShadowSetting $GLOBAL_color_primary;
+    @include GLOBAL_mixin_svgBgAsBase64('arrowRight.svg', $GLOBAL_color_primary);
+  }
+}
+

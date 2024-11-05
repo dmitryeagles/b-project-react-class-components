@@ -1,0 +1,84 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  position: relative;
+  margin: 0 0 30px 0;
+}
+
+.itemTitle{
+  font-size: $GLOBAL_fontSizeHelper;
+  background-color: $GLOBAL_inputBgColor;
+  position: absolute;
+  top: -8px;
+  left: 15px;
+  padding: 0 5px;
+  transition: color 0.3s;
+}
+
+.itemContent{
+  color: $GLOBAL_fontColorPrimary;
+  border: 1px solid $GLOBAL_inputBorderColor;
+  outline: none;
+  background-color: $GLOBAL_inputBgColor;
+  font-size: $GLOBAL_fontSize;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  display: grid;
+  grid-gap: 0px 10px;
+  grid-template-columns: 100px auto;
+
+  &:hover{
+    background-color: $GLOBAL_inputBgColorHover;
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.itemLabel {
+  display: flex;
+  align-items: center;
+}
+
+.progressLineContainer {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  display: grid;
+  grid-gap: 0px 10px;
+  grid-template-columns: 45px auto;
+}
+
+.progressPercent {
+  display: flex;
+  align-items: center;
+}
+
+.progressBar {
+  height: 25px;
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blueLighten{
+  background-color: lighten($GLOBAL_color_primary, 35%);
+}
+
+.greenLighten{
+  background-color: lighten($GLOBAL_color_successOrOkPrimary, 35%);
+}
+
+.orangeLighten{
+  background-color: lighten($GLOBAL_color_warningPrimary, 35%);
+}
+
+@media screen and (max-width: 750px) {
+  .itemContent{
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px 0;
+  }
+}

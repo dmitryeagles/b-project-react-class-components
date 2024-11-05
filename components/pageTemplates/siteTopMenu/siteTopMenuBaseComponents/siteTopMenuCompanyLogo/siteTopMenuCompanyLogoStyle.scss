@@ -1,0 +1,39 @@
+@import 'style/GLOBAL';
+
+$siteTopMenuHeight: 60px;
+
+.companyLogo {
+  $logoSize: $siteTopMenuHeight - 10px;
+  height: $logoSize;
+  width: $logoSize;
+  display: inline-block;
+  border-radius: 50%;
+  border: $GLOBAL_borderColor;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  background-image: linear-gradient(61deg, #009cff 23.3%, #07ecff 84.7%);
+
+  &:hover {
+    box-shadow: 0 0 16px 1px $GLOBAL_boxShadowPanelColor;
+  }
+}
+
+.logoHome {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include GLOBAL_mixin_svgBgAsBase64('home.svg', $GLOBAL_fontColorOnAnyBg);
+}
+
+@media screen and (max-width: 540px){ 
+  .companyLogo {
+    $logoSize: $siteTopMenuHeight - 20px;
+    height: $logoSize;
+    width: $logoSize;
+  }
+}

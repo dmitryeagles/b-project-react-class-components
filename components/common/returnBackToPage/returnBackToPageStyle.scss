@@ -1,0 +1,23 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  padding-bottom: 10px;
+}
+
+.linkBack {
+  color: $GLOBAL_color_primary;
+  font-size: $GLOBAL_fontSize;
+  display: inline-block;
+  text-decoration: none;
+  background-position: left;
+  background-repeat: no-repeat;
+  $icoSize: $GLOBAL_fontSize - 5px;
+  background-size: $icoSize $icoSize;
+  cursor: pointer;
+  @include GLOBAL_mixin_svgBgAsBase64('arrowLeft.svg', $GLOBAL_color_primary);
+  transition: box-shadow 0.5s;
+  padding-left: $icoSize + 2px;
+  &:hover {
+    box-shadow: 0 1px 0 $GLOBAL_color_primary;
+  }
+}

@@ -1,0 +1,14 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  padding-bottom: 20px;
+  text-align: right;
+}
+
+.componentContainer > * {
+  margin: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

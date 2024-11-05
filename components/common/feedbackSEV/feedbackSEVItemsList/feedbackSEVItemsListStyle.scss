@@ -1,0 +1,69 @@
+@import 'style/GLOBAL';
+
+.sevItemContainer {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottomButton {
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  $animationTime: 0.5s;
+  transition: background-color $animationTime;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+}
+
+.commentTextContainer{
+  padding: 20px 25px;
+  border: 1px solid $GLOBAL_borderColor;
+  position: relative;
+  margin: 30px 0 20px 0;
+  transition: border-color 0.4s;
+  border-radius: 0 10px 10px 10px;
+
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.commentTextLabel{
+  position: absolute;
+  display: inline-block;
+  background-color: $GLOBAL_panelBgColor;
+  padding: 0 5px 0 0;
+  font-size: $GLOBAL_fontSize;
+  top: -12px;
+  left: -1px;
+  font-weight: bold;
+}
+
+.commentTextLabelIco{
+  padding: 3px;
+  border-radius: 50%;
+  background-color: $GLOBAL_color_primary;
+  display: inline-flex;
+  width: $GLOBAL_fontSize;
+  height: $GLOBAL_fontSize;
+  font-size: $GLOBAL_fontSize;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkNewSev {
+  background-color: $GLOBAL_color_primary;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%);
+  }
+}
+
+.sevItemContentContainer {
+  padding: 20px;
+}

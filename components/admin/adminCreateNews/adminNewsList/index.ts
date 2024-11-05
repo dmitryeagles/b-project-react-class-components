@@ -1,0 +1,1 @@
+export {default as AdminNewsList} from "./adminNewsList";

@@ -1,0 +1,34 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  padding-top: 10px;
+}
+
+.buttonShowDetailInfoOpen {
+  @include GLOBAL_mixin_svgBgAsBase64('arrowTop.svg', $GLOBAL_color_primary);
+}
+
+
+.buttonShowDetailInfoClose {
+  @include GLOBAL_mixin_svgBgAsBase64('arrowDown.svg', $GLOBAL_color_primary);
+}
+
+
+
+.buttonShowDetailInfo {
+  color: $GLOBAL_color_primary;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: unset;
+  transition: box-shadow 0.3s;
+  font-family: $GLOBAL_fontNameMedium;
+  background-position: right;
+  padding-right: $GLOBAL_fontSize;
+  background-repeat: no-repeat;
+  $icoSize: 12px;
+  background-size: $icoSize $icoSize;
+
+  &:hover {
+    box-shadow: 0 1px 0 $GLOBAL_color_primary;
+  }
+}

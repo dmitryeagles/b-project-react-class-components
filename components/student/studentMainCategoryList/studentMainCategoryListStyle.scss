@@ -1,0 +1,84 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px 20px;
+}
+
+
+.mainCategoryItem {
+  text-align: center;
+  border-radius: 30px;
+  background-color: $GLOBAL_panelBgColor;
+  display: inline-block;
+  padding: 10px 10px 30px 10px;
+  text-decoration: none;
+  cursor: pointer;
+  $animationTime: 0.2s;
+  transition: color $animationTime ease-in-out, box-shadow $animationTime ease-in-out;
+  box-shadow: 0 1px 7px rgb(0 125 237 / 26%);
+
+  &:hover {
+    box-shadow: 0 1px 7px $GLOBAL_color_primary;
+
+    .textContainer {
+      color: $GLOBAL_color_primary;
+    }
+  }
+}
+
+.textContainer {
+  padding-top: 5px;
+  color: $GLOBAL_fontColorPrimary;
+  text-decoration: none;
+  font-family: $GLOBAL_fontNameMedium;
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+.imageContainer {
+  height: 260px;
+}
+
+.imageEducator {
+  @include GLOBAL_mixin_svgBgAsBase64('educatorColor.svg');
+}
+
+.imageProjectionsColor {
+  @include GLOBAL_mixin_svgBgAsBase64('projectionsColor.svg');
+}
+
+.imageCertificate {
+  @include GLOBAL_mixin_svgBgAsBase64('certificateColor.svg');
+}
+
+.imageGuyWithEnvelopesColor {
+  @include GLOBAL_mixin_svgBgAsBase64('guyWithEnvelopesColor.svg');
+}
+
+.imageTaskDiaryColor {
+  @include GLOBAL_mixin_svgBgAsBase64('taskDiaryColor.svg');
+}
+
+.imageUnknown {
+  @include GLOBAL_mixin_svgBgAsBase64('faqColor.svg');
+}
+
+@media screen and (max-width: 1400px) {
+  .componentContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .componentContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .componentContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,117 @@
+@import 'style/GLOBAL';
+
+.questionTextContainer {
+  padding: 20px 10px;
+  border: 1px solid $GLOBAL_borderColor;
+  position: relative;
+  margin: 10px 0 10px 0;
+  transition: border-color 0.4s;
+  border-radius: 0 10px 10px 10px;
+
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.questionContent {
+  @include GLOBAL_mixin_examTestContentHTML;
+}
+
+.answerContent {
+  @include GLOBAL_mixin_examTestContentHTML;
+}
+
+.questionTextLabel {
+  position: absolute;
+  display: inline-block;
+  background-color: $GLOBAL_panelBgColor;
+  padding: 0 5px 0 0;
+  font-size: $GLOBAL_fontSize;
+  top: -12px;
+  left: -1px;
+  font-weight: bold;
+}
+
+.questionTextLabelIco {
+  padding: 3px;
+  border-radius: 50%;
+  background-color: $GLOBAL_color_primary;
+  display: inline-flex;
+  width: $GLOBAL_fontSize;
+  height: $GLOBAL_fontSize;
+  font-size: $GLOBAL_fontSize;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonShowAnswersContainer {
+  padding-top: 10px;
+}
+
+.buttonShowAnswers {
+  color: $GLOBAL_color_primary;
+  display: inline-block;
+  background-position: right;
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  $icoSize: 12px;
+  background-size: $icoSize $icoSize;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  font-family: $GLOBAL_fontNameMedium;
+
+  &:hover {
+    box-shadow: 0 1px 0 $GLOBAL_color_primary;
+  }
+}
+
+.buttonShowAnswersClose {
+  @include GLOBAL_mixin_svgBgAsBase64('arrowDown.svg', $GLOBAL_color_primary);
+}
+
+.buttonShowAnswersOpen {
+  @include GLOBAL_mixin_svgBgAsBase64('arrowTop.svg', $GLOBAL_color_primary);
+}
+
+.testAnswersListContainer {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  padding: 25px 20px;
+  border: 1px solid $GLOBAL_borderColor;
+  animation: animationShowQuestionAnswers 1.2s;
+  border-radius: 20px;
+  max-height: 350px;
+  overflow-y: auto;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: $GLOBAL_color_primary;
+  }
+}
+
+.testAnswer {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.testAnswerTrue {
+  border-left: 3px solid $GLOBAL_color_successOrOkPrimary;
+}
+
+.testAnswerFalse {
+  border-left: 3px solid $GLOBAL_color_errorOrCancelPrimary;
+}
+
+@keyframes animationShowQuestionAnswers {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

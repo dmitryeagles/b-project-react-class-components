@@ -1,0 +1,12 @@
+export type Styles = {
+  'filterDropDownGroupContainer': string;
+  'filtersContainer': string;
+  'filterSearchWrapper': string;
+  'inputSearchContainer': string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;

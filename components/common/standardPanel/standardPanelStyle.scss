@@ -1,0 +1,19 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  box-sizing: border-box;
+  background-color: $GLOBAL_panelBgColor;
+  $boxShadowSetting: 0 4px 20px;
+  box-shadow: $boxShadowSetting $GLOBAL_boxShadowPanelColor;
+  $animationTime: 0.5s;
+  transition: box-shadow $animationTime;
+
+  &:hover {
+    box-shadow: $boxShadowSetting $GLOBAL_color_primary;
+  }
+}
+
+.panelStandardStyle {
+  padding: 20px;
+  border-radius: 10px;
+}

@@ -1,0 +1,31 @@
+@import '../../../style/GLOBAL';
+
+.icoSuccessContainer {
+  $iciSize:120px;
+  height: $iciSize;
+  @include GLOBAL_mixin_svgBgAsBase64('success.svg?fill='+GLOBAL_function_convertColorToStr($GLOBAL_color_successOrOkPrimary));
+  background-repeat: no-repeat;
+  background-size: $iciSize $iciSize;
+  background-position: center;
+}
+
+.textConfirmEmailContainer {
+  text-align: center;
+  font-size: $GLOBAL_fontSizeTitle;
+  padding: 10px 0;
+}
+
+.textLoginNowContainer {
+  text-align: center;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+.linkLoginNow {
+  padding-left: 5px;
+  text-decoration: none;
+  color: $GLOBAL_color_primary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

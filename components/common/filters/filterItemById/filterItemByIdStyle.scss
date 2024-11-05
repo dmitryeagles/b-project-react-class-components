@@ -1,0 +1,59 @@
+@import 'style/GLOBAL';
+
+$borderRadius: 20px;
+
+.componentContainer {
+  display: inline-flex;
+  border-radius: $borderRadius;
+  $animationTime: 0.3s;
+  transition: background-color $animationTime, border-color $animationTime;
+}
+
+.readOnlySearchValue {
+  font-family: $GLOBAL_fontNamePrimary;
+  color: $GLOBAL_fontColorPrimary;
+  border-top: 1px solid $GLOBAL_color_primary;
+  border-bottom: 1px solid $GLOBAL_color_primary;
+  border-left: 1px solid $GLOBAL_color_primary;
+  border-right: unset;
+  outline: none;
+  background-color: $GLOBAL_inputBgColor;
+  font-size: $GLOBAL_fontSize;
+  width: 100%;
+  display: inline-flex;
+  padding: 10px;
+  border-radius: $borderRadius 0 0 $borderRadius;
+  box-sizing: border-box;
+}
+
+.selectedId {
+  font-weight: bold;
+  color: $GLOBAL_color_primary;
+}
+
+.helpText {
+  white-space: pre;
+}
+
+.rightButton {
+  @include GLOBAL_mixin_flexCenter(inline-flex);
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 0 $borderRadius $borderRadius 0;
+  color: $GLOBAL_fontColorOnAnyBg;
+  $animationTime: 0.3s;
+  transition: background-color $animationTime, color $animationTime ease;
+  $iconSize: $GLOBAL_fontSize;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: $iconSize $iconSize;
+  background-position: center;
+  @include GLOBAL_mixin_svgBgAsBase64('x_close.svg', $GLOBAL_fontColorOnPrimaryColorBg);
+  background-color: $GLOBAL_color_primary;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_errorOrCancelPrimary, 10%);
+  }
+}
+
+

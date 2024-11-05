@@ -1,0 +1,43 @@
+
+.imageSlider {
+  margin-right: 30px;
+}
+
+
+.contentWrapper {
+  display: flex;
+}
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+
+@media screen and (max-width: 960px) {
+  .contentWrapper {
+    display: block;
+  }
+
+  .imageWrapper {
+    display: block;
+    text-align: center;
+  }
+
+  .dataWrapper {
+    display: block;
+    padding-top: 20px;
+  }
+
+  .imageSlider {
+    display: block;
+    width: 100%;
+  }
+
+}

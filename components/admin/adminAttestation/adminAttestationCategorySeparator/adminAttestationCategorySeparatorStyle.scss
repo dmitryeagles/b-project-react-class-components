@@ -1,0 +1,18 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  padding: 40px 0 10px 0;
+}
+
+.titleContainer {
+  font-size: $GLOBAL_fontSizeSubtitle;
+  color: $GLOBAL_color_primary;
+  text-align: left;
+  border-bottom: 1px solid $GLOBAL_borderColor;
+  padding: 0 0 5px 0;
+}
+
+.buttonContainer {
+  padding: 10px 0 0 0;
+  text-align: right;
+}

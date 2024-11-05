@@ -1,0 +1,89 @@
+@import 'style/GLOBAL';
+
+@mixin mixin_inputSearch {
+  font-family: $GLOBAL_fontNamePrimary;
+  color: $GLOBAL_fontColorPrimary;
+  border-top: 1px solid $GLOBAL_inputBorderColor;
+  border-bottom: 1px solid $GLOBAL_inputBorderColor;
+  border-left: 1px solid $GLOBAL_inputBorderColor;
+  border-right: unset;
+  outline: none;
+  background-color: $GLOBAL_inputBgColor;
+}
+
+.componentContainer {
+  display: flex;
+  border-radius: 10px;
+  $animationTime: 0.3s;
+  transition: background-color $animationTime, border-color $animationTime;
+
+  &:focus-within {
+    background-color: $GLOBAL_inputBgColorHover;
+    border-color: $GLOBAL_inputBorderColorHover;
+  }
+}
+
+.readOnlySearchValue {
+  @include mixin_inputSearch;
+  font-size: $GLOBAL_fontSize;
+  width: 100%;
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  box-sizing: border-box;
+}
+
+.inputSearch {
+  @include mixin_inputSearch;
+  font-size: $GLOBAL_fontSize;
+  width: 100%;
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  box-sizing: border-box;
+
+  &:active,
+  &:focus-visible,
+  &:focus {
+    background-color: $GLOBAL_inputBgColorHover;
+    border-color: $GLOBAL_inputBorderColorHover;
+  }
+}
+
+.rightButton {
+  @include GLOBAL_mixin_flexCenter(inline-flex);
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 0 10px 10px 0;
+  color: $GLOBAL_fontColorOnAnyBg;
+  $animationTime: 0.3s;
+  transition: background-color $animationTime, color $animationTime ease;
+  $iconSize: $GLOBAL_fontSize;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: $iconSize $iconSize;
+  background-position: center;
+}
+
+.iconSearch {
+  @include GLOBAL_mixin_svgBgAsBase64('magnifier.svg?fill='+GLOBAL_function_convertColorToStr($GLOBAL_fontColorOnPrimaryColorBg));
+}
+
+.iconCancel {
+  @include GLOBAL_mixin_svgBgAsBase64('x_close.svg?fill='+GLOBAL_function_convertColorToStr($GLOBAL_fontColorOnPrimaryColorBg));
+}
+
+.buttonSearch {
+  background-color: $GLOBAL_color_primary;
+
+  &:hover {
+    background-color: darken($GLOBAL_color_primary, 10%)
+  }
+}
+
+.buttonReset {
+  background-color: $GLOBAL_color_errorOrCancelPrimary;
+  &:hover {
+    background-color: darken($GLOBAL_color_errorOrCancelPrimary, 10%);
+  }
+}

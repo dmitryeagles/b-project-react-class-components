@@ -1,0 +1,78 @@
+@use "sass:math";
+@import 'style/GLOBAL';
+
+.popupBodySize {
+  width: 90%;
+  min-width: 340px;
+}
+
+.inputText {
+  input {
+    width: 100%;
+  }
+}
+.itemImgContainer {
+  z-index: 0;
+  $imgWidth: 250px;
+  width: $imgWidth;
+  height: math.floor(math.div($imgWidth * 9, 16));
+  flex-shrink: 0;
+  position: relative;
+  $animationTime: 0.5s;
+  transition: width $animationTime, height $animationTime;
+
+  &:hover {
+    .areaActionButtonsPreviewImageFile {
+      z-index: 0;
+      opacity: 1;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.areaActionButtonsPreviewImageFile {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.errorText {
+  padding-top: 5px;
+  font-size: $GLOBAL_fontSizeHelper;
+  color: $GLOBAL_color_errorOrCancelPrimary;
+  text-align: left;
+}
+
+.categorySeparator {
+  border-bottom: 1px solid $GLOBAL_borderColor;
+  font-weight: bold;
+  color: $GLOBAL_color_primary;
+}
+
+.categoryContentContainer, .gridContentContainer {
+  display: grid;
+  grid-gap: 10px 10px;
+  padding: 20px 0 10px 0;
+}
+
+.categoryContentContainer {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.gridContentContainer {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 720px) {
+  .popupBodySize {
+    width: 95%;
+  }
+
+  .categoryContentContainer {
+    display: block;
+  }
+}

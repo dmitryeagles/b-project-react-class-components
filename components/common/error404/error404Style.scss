@@ -1,0 +1,30 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  text-align: center;
+}
+
+.animationContainer {
+  min-width: 300px;
+  width: 65%;
+  display: inline-block;
+}
+
+.containerText {
+  color: $GLOBAL_fontColorPrimary;
+  text-align: center;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  font-weight: bold;
+}
+
+.homeLink {
+  margin-top: 10px;
+  color: $GLOBAL_color_primary;
+  font-size: $GLOBAL_fontSizeSubtitle;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

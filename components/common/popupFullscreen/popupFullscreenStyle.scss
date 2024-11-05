@@ -1,0 +1,63 @@
+@import 'style/GLOBAL';
+
+.popupBackground {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $GLOBAL_popupBodyBgColor;
+  top: 0;
+  left: 0;
+  z-index: $GLOBAL_zIndex_popup;
+  @include GLOBAL_mixin_flexCenter();
+  animation: animation_popupOpacityIn 1s;
+}
+
+.popupBody {
+  background-color: $GLOBAL_panelBgColor;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0 $GLOBAL_popupBodyBgColor;
+}
+
+.popupContentContainerWithCloseButton {
+  padding: 10px 20px 20px 20px;
+}
+
+.popupContentContainer {
+  padding: 20px;
+}
+
+.containerButtonClose {
+  text-align: right;
+  padding: 10px 10px 0 0;
+}
+
+.buttonClosePopup {
+  $icoSize: 12px;
+  display: inline-block;
+  width: $icoSize;
+  height: $icoSize;
+  color: $GLOBAL_borderColor;
+  cursor: pointer;
+  @include GLOBAL_mixin_svgBgAsBase64('x_close.svg?fill='+GLOBAL_function_convertColorToStr($GLOBAL_borderColor));
+  background-repeat: no-repeat;
+  background-size: $icoSize $icoSize;
+  background-position: center;
+
+  &:hover {
+    @include GLOBAL_mixin_svgBgAsBase64('x_close.svg?fill='+GLOBAL_function_convertColorToStr(darken($GLOBAL_borderColor, 10%)));
+  }
+}
+
+.documentBodyOverflowHidden {
+  overflow: hidden;
+}
+
+@keyframes animation_popupOpacityIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

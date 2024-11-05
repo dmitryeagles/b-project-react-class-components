@@ -1,0 +1,17 @@
+.componentContainer {
+  text-align: right;
+  padding-bottom: 10px;
+
+  a {
+    margin-bottom: 10px;
+  }
+
+  a:first-child {
+    margin-right: 10px;
+  }
+
+  button {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}

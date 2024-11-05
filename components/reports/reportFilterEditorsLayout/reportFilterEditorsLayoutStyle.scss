@@ -1,0 +1,34 @@
+
+.componentContainer {
+  display: grid;
+  grid-gap: 14px 14px;
+}
+
+.layoutOneColumn{
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.layoutTwoColumn{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.layoutThreeColumn{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+@media screen and (max-width: 960px) {
+  .layoutThreeColumn {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .layoutTwoColumn {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .layoutThreeColumn {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

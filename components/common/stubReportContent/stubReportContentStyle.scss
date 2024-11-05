@@ -1,0 +1,30 @@
+@import 'style/GLOBAL';
+
+.componentContainer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.textContainer {
+  text-align: center;
+  font-size: $GLOBAL_fontSizeSubtitle;
+}
+
+.imageContainer {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.imageStatusEmpty {
+  @include GLOBAL_mixin_svgBgAsBase64('blankCanvasColor.svg');
+}
+
+.imageStatusError {
+  @include GLOBAL_mixin_svgBgAsBase64('notifyColor.svg');
+}
+
+.imageStatusNotCreated {
+  @include GLOBAL_mixin_svgBgAsBase64('noDataColor.svg');
+}

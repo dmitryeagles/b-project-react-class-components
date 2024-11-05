@@ -1,0 +1,48 @@
+@import 'style/GLOBAL';
+
+
+.itemVoteContainer {
+  display: flex;
+  align-items: center;
+  background-color: $GLOBAL_panelBgColor;
+  border-radius: 10px;
+  $boxShadowSetting: 0 4px 20px;
+  box-shadow: $boxShadowSetting $GLOBAL_boxShadowPanelColor;
+  $animationTime: 0.5s;
+  transition: box-shadow $animationTime;
+  padding: 10px 20px;
+  margin: 12px 0 12px 0;
+
+  &:hover {
+    box-shadow: $boxShadowSetting $GLOBAL_color_primary;
+  }
+}
+
+
+.textContainer {
+  display: block;
+}
+
+.lineUserFullName {
+  color: $GLOBAL_color_primary;
+  cursor: help;
+}
+
+.lineUserComment {
+  cursor: help;
+}
+
+.voteNumber {
+  cursor: help;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: $GLOBAL_color_primary;
+  color: $GLOBAL_fontColorOnPrimaryColorBg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}

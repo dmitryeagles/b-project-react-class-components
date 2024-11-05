@@ -1,0 +1,9 @@
+.menuItemsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 10px;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
